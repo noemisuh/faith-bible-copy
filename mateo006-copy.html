@@ -1,0 +1,86 @@
+from zipfile import ZipFile
+import os
+
+# 디렉토리 생성
+output_dir = "/mnt/data/matthew_mateo_006"
+os.makedirs(output_dir, exist_ok=True)
+
+# HTML 내용 생성 (간단 예시, 실제 말씀 내용은 더 길게 채울 수 있음)
+chinese_html = """
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>马太福音 第6章</title>
+    <style>
+        body {{ max-width: 800px; margin: auto; padding: 20px; font-family: sans-serif; }}
+        .verse {{ margin-bottom: 10px; }}
+        textarea {{ width: 100%; height: 50px; margin-bottom: 20px; }}
+        .nav {{ text-align: center; margin: 20px 0; }}
+        .nav a {{ margin: 0 20px; text-decoration: none; font-weight: bold; }}
+    </style>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+    <h1>📖 马太福音 第6章</h1>
+    <div class="nav">
+        <a href="matthew005-copy.html">←</a>
+        <a href="matthew007-copy.html">→</a>
+    </div>
+    <div class="verse">1 你们要小心，不可将善事行在人的面前，故意叫他们看见；若是这样，就不能得你们天父的赏赐了。</div>
+    <textarea placeholder="请在此抄写..."></textarea>
+    <div class="verse">2 所以你施舍的时候，不可在你前面吹号，像那假冒为善的人...</div>
+    <textarea placeholder="请在此抄写..."></textarea>
+    <div class="verse">3 你施舍的时候，不要叫左手知道右手所做的...</div>
+    <textarea placeholder="请在此抄写..."></textarea>
+</body>
+</html>
+"""
+
+spanish_html = """
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mateo Capítulo 6</title>
+    <style>
+        body {{ max-width: 800px; margin: auto; padding: 20px; font-family: sans-serif; }}
+        .verse {{ margin-bottom: 10px; }}
+        textarea {{ width: 100%; height: 50px; margin-bottom: 20px; }}
+        .nav {{ text-align: center; margin: 20px 0; }}
+        .nav a {{ margin: 0 20px; text-decoration: none; font-weight: bold; }}
+    </style>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+    <h1>📖 Mateo Capítulo 6</h1>
+    <div class="nav">
+        <a href="mateo005-copy.html">←</a>
+        <a href="mateo007-copy.html">→</a>
+    </div>
+    <div class="verse">1 »Cuídense de no hacer sus obras de justicia delante de la gente para ser vistos por ellos. Si lo hacen, no recibirán recompensa de su Padre que está en el cielo.</div>
+    <textarea placeholder="Escribe aquí..."></textarea>
+    <div class="verse">2 »Por eso, cuando des a los necesitados, no lo anuncies al son de trompeta...</div>
+    <textarea placeholder="Escribe aquí..."></textarea>
+    <div class="verse">3 Más bien, cuando des a los necesitados, que no se entere tu mano izquierda de lo que hace la derecha...</div>
+    <textarea placeholder="Escribe aquí..."></textarea>
+</body>
+</html>
+"""
+
+# 파일 경로
+chinese_path = os.path.join(output_dir, "matthew006-copy.html")
+spanish_path = os.path.join(output_dir, "mateo006-copy.html")
+
+# 파일 저장
+with open(chinese_path, "w", encoding="utf-8") as f:
+    f.write(chinese_html)
+
+with open(spanish_path, "w", encoding="utf-8") as f:
+    f.write(spanish_html)
+
+# 압축 파일 생성
+zip_path = "/mnt/data/matthew_mateo_006.zip"
+with ZipFile(zip_path, "w") as zipf:
+    zipf.write(chinese_path, arcname="matthew006-copy.html")
+    zipf.write(spanish_path, arcname="mateo006-copy.html")
+
+zip_path
