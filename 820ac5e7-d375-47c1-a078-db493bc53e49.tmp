@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mateo 1</title>
+    <style>
+        body {
+            font-family: "Noto Sans", sans-serif;
+            background-color: #f4fcf8;
+            margin: 40px 10%;
+            line-height: 1.8;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        h2 {
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+        .nav-arrows {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .verse {
+            margin: 20px 0;
+        }
+        textarea {
+            width: 100%;
+            height: 80px;
+            font-size: 16px;
+            padding: 10px;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Bible_icon.png" width="40">
+    <h2>Mateo 1</h2>
+    <div class="nav-arrows">
+        <a href="mateo000.html">&#8592;</a>
+        <a href="mateo002.html">&#8594;</a>
+    </div>
+<div class="verse"><span>1</span> Éste es el registro de los antepasados de Jesucristo, descendiente de David y de Abraham:<br><textarea placeholder="Escriba aquí..."></textarea></div>
+<div class="verse"><span>2</span> Abraham fue padre de Isaac; Isaac, padre de Jacob; y Jacob, padre de Judá y de sus hermanos.<br><textarea placeholder="Escriba aquí..."></textarea></div>
+<div class="verse"><span>3</span> Judá fue padre de Fares y de Zérah (su madre fue Tamar); Fares, padre de Jezrón; Jezrón, padre de Aram.<br><textarea placeholder="Escriba aquí..."></textarea></div>
+<div class="verse"><span>4</span> Aram, padre de Aminadab; Aminadab, padre de Naasón; Naasón, padre de Salmón.<br><textarea placeholder="Escriba aquí..."></textarea></div>
+</body></html>
