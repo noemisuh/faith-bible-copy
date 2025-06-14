@@ -1,88 +1,185 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>马太福音 第1章</title>
+  <title>马太福音 1章</title>
   <style>
     body {
-      font-family: 'Noto Sans SC', sans-serif;
-      margin: 40px 10%;
+      font-family: "Noto Sans SC", sans-serif;
       line-height: 1.6;
+      margin: 40px;
+      padding: 0 10%;
       user-select: none;
     }
     h1 {
-      font-size: 28px;
       text-align: center;
+      font-size: 2em;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
     }
     .verse {
-      display: flex;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
-    .verse-number {
-      width: 50px;
+    .verse span.num {
+      display: inline-block;
+      width: 2em;
       font-weight: bold;
-    }
-    .verse-text {
-      flex: 1;
+      margin-right: 10px;
     }
     textarea {
       width: 100%;
       height: 60px;
-      margin-top: 5px;
-      resize: none;
-      font-family: 'Noto Sans SC', sans-serif;
+      margin-top: 4px;
+      margin-bottom: 20px;
+      resize: vertical;
+      font-size: 1em;
     }
-    .nav-arrows {
-      text-align: center;
-      margin: 20px 0;
-      font-size: 24px;
+    .mic-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 1.5em;
+      cursor: pointer;
     }
-    .nav-arrows a {
-      margin: 0 30px;
-      text-decoration: none;
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
     }
-    img.bible-icon {
-      width: 28px;
-      vertical-align: middle;
-      margin-right: 8px;
+    .top-bar input {
+      font-size: 1em;
+      padding: 5px;
+      width: 40%;
+    }
+    .top-bar .list {
+      font-weight: bold;
     }
   </style>
 </head>
-<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
-  <div class="nav-arrows">
-    <a href="matthew028-copy">⬅</a>
-    <a href="matthew002-copy">➡</a>
+<body>
+  <div class="top-bar">
+    <div class="list">📖 圣经目录 | 马太福音</div>
+    <input type="text" placeholder="搜索经文、词语…" />
   </div>
 
-  <h1><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Bible_icon.svg/1024px-Bible_icon.svg.png" class="bible-icon" alt="Bible icon">马太福音 第1章</h1>
+  <h1>📜 马太福音 第1章</h1>
 
-  <div class="verse"><div class="verse-number">1</div><div class="verse-text">亚伯拉罕的后裔，大卫的子孙，耶稣基督的家谱如下：</div></div>
-  <textarea placeholder="请在此手抄经文"></textarea>
+  <div class="nav">
+    <a href="matthew028.html">← 上一章</a>
+    <a href="matthew002.html">下一章 →</a>
+  </div>
 
-  <div class="verse"><div class="verse-number">2</div><div class="verse-text">亚伯拉罕生以撒；以撒生雅各；雅各生犹大和他的弟兄；</div></div>
-  <textarea placeholder="请在此手抄经文"></textarea>
+  <div class="verse"><span class="num">1</span>亚伯拉罕的后裔、大卫的子孙、耶稣基督的家谱：</div>
+  <textarea placeholder="请在此手写第1节内容..."></textarea>
 
-  <div class="verse"><div class="verse-number">3</div><div class="verse-text">犹大从他玛氏生法勒斯和谢拉；法勒斯生希斯仑；希斯仑生亚兰；</div></div>
-  <textarea placeholder="请在此手抄经文"></textarea>
+  <div class="verse"><span class="num">2</span>亚伯拉罕生以撒；以撒生雅各；雅各生犹大和他的弟兄；</div>
+  <textarea placeholder="请在此手写第2节内容..."></textarea>
 
-  <div class="verse"><div class="verse-number">4</div><div class="verse-text">亚兰生亚米拿达；亚米拿达生拿顺；拿顺生撒门；</div></div>
-  <textarea placeholder="请在此手抄经文"></textarea>
+  <div class="verse"><span class="num">3</span>犹大从他玛氏生法勒斯和谢拉；法勒斯生希斯仑；希斯仑生亚兰；</div>
+  <textarea placeholder="请在此手写第3节内容..."></textarea>
 
-  <div class="verse"><div class="verse-number">5</div><div class="verse-text">撒门从喇合氏生波阿斯；波阿斯从路得氏生俄备得；俄备得生耶西；</div></div>
-  <textarea placeholder="请在此手抄经文"></textarea>
+  <div class="verse"><span class="num">4</span>亚兰生亚米拿达；亚米拿达生拿顺；拿顺生撒门；</div>
+  <textarea placeholder="请在此手写第4节内容..."></textarea>
 
-  <div class="verse"><div class="verse-number">6</div><div class="verse-text">耶西生大卫王；大卫从乌利亚的妻子生所罗门；</div></div>
-  <textarea placeholder="请在此手抄经文"></textarea>
+  <div class="verse"><span class="num">5</span>撒门从喇合氏生波阿斯；波阿斯从路得氏生俄备得；俄备得生耶西；</div>
+  <textarea placeholder="请在此手写第5节内容..."></textarea>
 
-  <div class="verse"><div class="verse-number">7</div><div class="verse-text">所罗门生罗波安；罗波安生亚比雅；亚比雅生亚撒；</div></div>
-  <textarea placeholder="请在此手抄经文"></textarea>
+  <div class="verse"><span class="num">6</span>耶西生大卫王。大卫从乌利亚的妻子生所罗门；</div>
+  <textarea placeholder="请在此手写第6节内容..."></textarea>
 
-  <div class="verse"><div class="verse-number">8</div><div class="verse-text">亚撒生约沙法；约沙法生约兰；约兰生乌西雅；</div></div>
-  <textarea placeholder="请在此手抄经文"></textarea>
+  <div class="verse"><span class="num">7</span>所罗门生罗波安；罗波安生亚比雅；亚比雅生亚撒；</div>
+  <textarea placeholder="请在此手写第7节内容..."></textarea>
 
-  <!-- 계속 이어서 25절까지 포함됩니다... -->
-  <!-- 실제 파일엔 마태복음 1장 전체 말씀이 모두 채워져 있습니다 -->
+  <div class="verse"><span class="num">8</span>亚撒生约沙法；约沙法生约兰；约兰生乌西亚；</div>
+  <textarea placeholder="请在此手写第8节内容..."></textarea>
 
+  <div class="verse"><span class="num">9</span>乌西亚生约坦；约坦生亚哈斯；亚哈斯生希西家；</div>
+  <textarea placeholder="请在此手写第9节内容..."></textarea>
+
+  <div class="verse"><span class="num">10</span>希西家生玛拿西；玛拿西生亚们；亚们生约西亚；</div>
+  <textarea placeholder="请在此手写第10节内容..."></textarea>
+
+  <div class="verse"><span class="num">11</span>百姓被迁到巴比伦的时候，约西亚生耶哥尼雅和他的弟兄；</div>
+  <textarea placeholder="请在此手写第11节内容..."></textarea>
+
+  <div class="verse"><span class="num">12</span>迁到巴比伦之后，耶哥尼雅生撒拉铁；撒拉铁生所罗巴伯；</div>
+  <textarea placeholder="请在此手写第12节内容..."></textarea>
+
+  <div class="verse"><span class="num">13</span>所罗巴伯生亚比玉；亚比玉生以利亚敬；以利亚敬生亚所；</div>
+  <textarea placeholder="请在此手写第13节内容..."></textarea>
+
+  <div class="verse"><span class="num">14</span>亚所生撒督；撒督生亚金；亚金生以律；</div>
+  <textarea placeholder="请在此手写第14节内容..."></textarea>
+
+  <div class="verse"><span class="num">15</span>以律生以利亚撒；以利亚撒生马但；马但生雅各；</div>
+  <textarea placeholder="请在此手写第15节内容..."></textarea>
+
+  <div class="verse"><span class="num">16</span>雅各生约瑟，就是马利亚的丈夫；那称为基督的耶稣，是从马利亚生的。</div>
+  <textarea placeholder="请在此手写第16节内容..."></textarea>
+
+  <div class="verse"><span class="num">17</span>这样，从亚伯拉罕到大卫共有十四代；从大卫到迁到巴比伦的时候也有十四代；从迁到巴比伦的时候到基督又有十四代。</div>
+  <textarea placeholder="请在此手写第17节内容..."></textarea>
+
+  <div class="verse"><span class="num">18</span>耶稣基督降生的事记在下面：他母亲马利亚已经许配了约瑟，还没有迎娶，马利亚就从圣灵怀了孕。</div>
+  <textarea placeholder="请在此手写第18节内容..."></textarea>
+
+  <div class="verse"><span class="num">19</span>她丈夫约瑟是个义人，不愿意明明地羞辱她，想要暗暗地把她休了。</div>
+  <textarea placeholder="请在此手写第19节内容..."></textarea>
+
+  <div class="verse"><span class="num">20</span>正思念这事的时候，有主的使者向他梦中显现，说：「大卫的子孙约瑟，不要怕，只管娶过你的妻子马利亚来；因她所怀的孕是从圣灵来的。</div>
+  <textarea placeholder="请在此手写第20节内容..."></textarea>
+
+  <div class="verse"><span class="num">21</span>她将要生一个儿子；你要给他起名叫耶稣，因他要将自己的百姓从罪恶里救出来。」</div>
+  <textarea placeholder="请在此手写第21节内容..."></textarea>
+
+  <div class="verse"><span class="num">22</span>这一切的事成就，是要应验主借先知所说的话：</div>
+  <textarea placeholder="请在此手写第22节内容..."></textarea>
+
+  <div class="verse"><span class="num">23</span>「必有童女怀孕生子，人要称他的名为以马内利。」（以马内利翻出来，就是「神与我们同在」。）</div>
+  <textarea placeholder="请在此手写第23节内容..."></textarea>
+
+  <div class="verse"><span class="num">24</span>约瑟醒了，起来，就遵着主使者的吩咐，把妻子娶过来；</div>
+  <textarea placeholder="请在此手写第24节内容..."></textarea>
+
+  <div class="verse"><span class="num">25</span>只是没有和她同房，等她生了儿子，就给他起名叫耶稣。</div>
+  <textarea placeholder="请在此手写第25节内容..."></textarea>
+
+  <button class="mic-btn" onclick="startDictation()">🎤</button>
+
+  <script>
+    function startDictation() {
+      if (window.hasOwnProperty('webkitSpeechRecognition')) {
+        const recognition = new webkitSpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.lang = 'zh-CN';
+        recognition.start();
+
+        recognition.onresult = function (e) {
+          const active = document.activeElement;
+          if (active && active.tagName === 'TEXTAREA') {
+            active.value += e.results[0][0].transcript;
+          }
+          recognition.stop();
+        };
+
+        recognition.onerror = function () {
+          recognition.stop();
+        };
+      } else {
+        alert('此浏览器不支持语音识别。');
+      }
+    }
+  </script>
 </body>
 </html>
