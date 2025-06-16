@@ -1,84 +1,92 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>马太福音 12章</title>
   <style>
     body {
-      font-family: sans-serif;
-      margin: 30px;
-      background-color: #fefefe;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
+      font-family: "SimSun", serif;
+      line-height: 1.8;
+      margin: 40px;
       user-select: none;
     }
     .top-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 15px;
     }
-    .book-selector {
-      font-size: 14px;
+    .bible-nav {
+      font-weight: bold;
     }
-    .search-box input {
+    .bible-nav span {
+      margin-right: 5px;
+    }
+    .search-bar input {
       padding: 5px;
       font-size: 14px;
     }
-    h2 {
+    .chapter-title {
       display: flex;
       align-items: center;
-      font-size: 24px;
-      margin-top: 30px;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 25px;
     }
-    h2 img {
+    .chapter-title img {
+      width: 28px;
       height: 28px;
       margin-right: 10px;
-    }
-    .verse {
-      margin: 18px 0 5px;
-      line-height: 1.8;
-    }
-    .verse-number {
-      font-weight: bold;
-      margin-right: 8px;
-    }
-    textarea {
-      width: 96%;
-      height: 50px;
-      margin: 6px 0 20px 0;
-      padding: 10px;
-      font-size: 14px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      resize: vertical;
     }
     .nav {
       display: flex;
       justify-content: space-between;
-      margin: 40px 0;
       font-size: 24px;
+      margin-bottom: 30px;
+    }
+    .verse {
+      margin-bottom: 10px;
+    }
+    .verse-number {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    textarea {
+      width: 96%;
+      height: 50px;
+      margin: 10px 2%;
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 8px;
+      box-sizing: border-box;
+      resize: vertical;
     }
     .mic-button {
       position: fixed;
       bottom: 20px;
-      right: 30px;
-      font-size: 22px;
-      padding: 10px;
-      border-radius: 50%;
-      background-color: #eee;
-      border: 1px solid #aaa;
+      right: 20px;
+      font-size: 26px;
       cursor: pointer;
     }
   </style>
 </head>
-<body>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+
   <div class="top-bar">
-    <div class="book-selector">马太福音 | 1 2 3 4 5 6 7 8 9 10 11 <b>12</b> 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28</div>
-    <div class="search-box"><input type="text" placeholder="搜索经文、词语..." /></div>
+    <div class="bible-nav">
+      <span>马太福音</span>
+      <span>|</span>
+      <span>1 2 3 4 5 6 7 8 9 10 11 <b>12</b> 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28</span>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="搜索经文、词语...">
+    </div>
   </div>
 
-  <h2><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Bible_icon_03.png/240px-Bible_icon_03.png" />马太福音 第12章</h2>
+  <div class="chapter-title">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Bible_book.svg/1024px-Bible_book.svg.png">
+    马太福音 12章
+  </div>
 
   <div class="nav">
     <a href="matthew011.html">⬅️</a>
@@ -87,7 +95,7 @@
 
   <div class="verse"><span class="verse-number">1</span>那时，耶稣在安息日从麦地经过。他的门徒饿了，就掐起麦穗来吃。</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">2</span>法利赛人看见，就对耶稣说：“看哪，你的门徒做安息日不可做的事了！”</div>
+  <div class="verse"><span class="verse-number">2</span>法利赛人看见，就对耶稣说：“看哪，你的门徒做安息日不可做的事了。”</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">3</span>耶稣对他们说：“经上记着大卫和跟从他的人饥饿之时所做的事，你们没有念过吗？</div>
   <textarea></textarea>
@@ -97,55 +105,55 @@
   <textarea></textarea>
   <div class="verse"><span class="verse-number">6</span>但我告诉你们：在这里有一人比殿更大。</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">7</span>“我喜爱怜恤，不喜爱祭祀”，你们若明白这话的意思，就不将无罪的当作有罪了。</div>
+  <div class="verse"><span class="verse-number">7</span>“我喜爱怜恤，不喜爱祭祀。”你们若明白这话的意思，就不将无罪的当作有罪的了。</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">8</span>因为人子是安息日的主。”</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">9</span>耶稣离开那地方，进了一个会堂。</div>
+  <div class="verse"><span class="verse-number">9</span>耶稣离开那地方，进了一个会堂，</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">10</span>那里有一个人枯干了一只手。有人问耶稣说：“安息日治病可以不可以？”意思是要控告他。</div>
+  <div class="verse"><span class="verse-number">10</span>那里有一个人枯干了一只手。有人问耶稣说：“安息日治病，可以不可以？”意思是要控告他。</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">11</span>耶稣说：“你们中间谁有一只羊，安息日掉在坑里，不把它抓住拉上来呢？</div>
+  <div class="verse"><span class="verse-number">11</span>耶稣说：“你们中间谁有一只羊，当安息日掉在坑里，不把它抓住拉上来呢？</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">12</span>人比羊何等贵重呢！所以，在安息日做善事是可以的。”</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">13</span>于是对那人说：“伸出手来！”他一伸，手就复原了，和那只手一样。</div>
+  <div class="verse"><span class="verse-number">13</span>于是对那人说：“伸出手来。”他把手一伸，手就复了原，和那只手一样。</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">14</span>法利赛人出去，商议怎样可以除灭耶稣。</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">15</span>耶稣知道了，就离开那里，有许多人跟着他。他把其中有病的人都治好了。</div>
+  <div class="verse"><span class="verse-number">15</span>耶稣知道了，就离开那里，有许多人跟着他，他把其中有病的人都治好了，</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">16</span>又嘱咐他们，不要给他传名。</div>
+  <div class="verse"><span class="verse-number">16</span>又嘱咐他们不要给他传名，</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">17</span>这是要应验先知以赛亚的话，说：</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">18</span>“看哪！我的仆人，我所拣选、所亲爱、心里所喜悦的！我要将我的灵赐给他，他必将公理传给外邦。</div>
+  <div class="verse"><span class="verse-number">18</span>“看哪，我的仆人，我所拣选、所亲爱、心里所喜悦的；我要将我的灵赐给他，他必将公理传给外邦。</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">19</span>他不争竞，不喧嚷，街上也没有人听见他的声音。</div>
+  <div class="verse"><span class="verse-number">19</span>他不争竞，不喧嚷；街上也没有人听见他的声音。</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">20</span>压伤的芦苇他不折断，将残的灯火他不吹灭，等他施行公理，叫公理得胜。</div>
+  <div class="verse"><span class="verse-number">20</span>压伤的芦苇，他不折断；将残的灯火，他不吹灭；等他施行公理，叫公理得胜。</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">21</span>外邦人都要仰望他的名。”</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">22</span>那时，有人将一个被鬼附着，又瞎又哑的人带到耶稣那里。耶稣就治好他，甚至那哑吧又能说话，又能看见。</div>
+  <div class="verse"><span class="verse-number">22</span>当下，有人将一个被鬼附着、又瞎又哑的人带到耶稣那里，耶稣就医治他，以致那哑巴又说话又看见。</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">23</span>众人都惊奇，说：“这不是大卫的子孙吗？”</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">24</span>但法利赛人听见，就说：“这个人赶鬼，无非是靠着鬼王别西卜啊。”</div>
+  <div class="verse"><span class="verse-number">24</span>但法利赛人听见，就说：“这个人赶鬼，无非是靠着鬼王别西卜啊！”</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">25</span>耶稣知道他们的意念，就对他们说：“凡一国自相分争，就成为荒场；一城一家自相分争，就站立不住。</div>
+  <div class="verse"><span class="verse-number">25</span>耶稣知道他们的意念，就对他们说：“凡一国自相分争，就成为荒场；一城一家自相分争，也必站立不住。</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">26</span>若撒但赶逐撒但，就是自相分争，他的国怎能站得住呢？</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">27</span>我若靠着别西卜赶鬼，你们的子弟又靠着谁赶呢？这样，他们就要断定你们的是非。</div>
+  <div class="verse"><span class="verse-number">27</span>我若靠别西卜赶鬼，你们的子弟赶鬼又是靠谁呢？这样，他们就要断定你们的是非。</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">28</span>我若靠着神的灵赶鬼，这就是神的国临到你们了。</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">29</span>人怎能进壮士家里，抢夺他的家具呢？除非先捆住那壮士，才可以抢夺他的家。</div>
+  <div class="verse"><span class="verse-number">29</span>人怎能进壮士家里抢夺他的家具呢？除非先捆住那壮士，才可以抢夺他的家财。</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">30</span>不与我相合的，就是敌我的；不同我收聚的，就是分散的。</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">31</span>所以我告诉你们：人一切的罪和亵渎的话都可得赦免，惟独亵渎圣灵总不得赦免。</div>
+  <div class="verse"><span class="verse-number">31</span>所以我告诉你们：人一切的罪和亵渎的话，都可得赦免；惟独亵渎圣灵，就永不得赦免，乃要担当永远的罪。</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">32</span>凡说话干犯人子的，还可得赦免；惟独说话干犯圣灵的，今世、来世总不得赦免。</div>
   <textarea></textarea>
@@ -155,25 +163,25 @@
   <textarea></textarea>
   <div class="verse"><span class="verse-number">35</span>善人从他心里所存的善就发出善来；恶人从他心里所存的恶就发出恶来。</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">36</span>我又告诉你们：凡人所说的闲话，当审判的日子必要句句供出来。</div>
+  <div class="verse"><span class="verse-number">36</span>我又告诉你们：凡人所说的闲话，当审判的日子，必要句句供出来，</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">37</span>因为要凭你的话定你为义，也要凭你的话定你有罪。”</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">38</span>当时有几个文士和法利赛人对耶稣说：“夫子，我们愿意你显个神迹给我们看。”</div>
+  <div class="verse"><span class="verse-number">38</span>当时，有几个文士和法利赛人对耶稣说：“夫子，我们愿意你显个神迹给我们看。”</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">39</span>耶稣回答说：“一个邪恶淫乱的世代求神迹，除了先知约拿的神迹以外，再没有神迹给他们看。</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">40</span>约拿三日三夜在大鱼腹中，人子也要这样三日三夜在地里头。</div>
+  <div class="verse"><span class="verse-number">40</span>约拿三日三夜在大鱼肚腹中，人子也要这样三日三夜在地里头。</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">41</span>当审判的时候，尼尼微人要起来定这世代的罪，因为他们听了约拿所传的就悔改了；看哪，在这里有一人比约拿更大。</div>
+  <div class="verse"><span class="verse-number">41</span>当审判的时候，尼尼微人要起来定这世代的罪，因为尼尼微人听了约拿所传的就悔改了；看哪，在这里有一人比约拿更大。</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">42</span>当审判的时候，南方的女王要起来定这世代的罪，因为她从地极而来，要听所罗门的智慧话；看哪，在这里有一人比所罗门更大。</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">43</span>污鬼离了人身，就在无水之地过来过去，寻求安歇之处，却寻不着。</div>
+  <div class="verse"><span class="verse-number">43</span>污鬼离了人身，就在无水之地过来过去，寻求安歇之处，确寻不着，</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">44</span>于是说：“我要回到我所出来的屋里去。”到了，就看见里面空闲，打扫干净，修饰好了，</div>
+  <div class="verse"><span class="verse-number">44</span>于是说：‘我要回到我所出来的屋里去。’到了，就看见里面空闲、打扫干净、修饰好了，</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">45</span>便去带了七个比自己更恶的鬼来，都进去住在那里。那人末后的景况比先前更不好了。这邪恶的世代也要如此。”</div>
+  <div class="verse"><span class="verse-number">45</span>便去另带着七个比自己更恶的鬼来，都进去住在那里。那人末后的景况比先前更不好了。这邪恶的世代也要如此。”</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">46</span>耶稣还对众人说话的时候，不料，他母亲和他弟兄站在外边，要与他说话。</div>
   <textarea></textarea>
@@ -181,40 +189,35 @@
   <textarea></textarea>
   <div class="verse"><span class="verse-number">48</span>他却回答那人说：“谁是我的母亲？谁是我的弟兄？”</div>
   <textarea></textarea>
-  <div class="verse"><span class="verse-number">49</span>就伸手指着门徒，说：“看哪，我的母亲，我的弟兄！</div>
+  <div class="verse"><span class="verse-number">49</span>就伸手指着门徒，说：“看哪，我的母亲，我的弟兄。</div>
   <textarea></textarea>
   <div class="verse"><span class="verse-number">50</span>凡遵行我天父旨意的人，就是我的弟兄、姐妹和母亲了。”</div>
   <textarea></textarea>
 
-  <div class="nav">
-    <a href="matthew011.html">⬅️</a>
-    <a href="matthew013.html">➡️</a>
-  </div>
-
-  <div class="mic-button" onclick="startDictation()">🎤</div>
+  <div class="mic-button">🎤</div>
 
   <script>
-    function startDictation() {
-      if (window.hasOwnProperty('webkitSpeechRecognition')) {
-        const recognition = new webkitSpeechRecognition();
-        recognition.continuous = false;
-        recognition.interimResults = false;
-        recognition.lang = "zh-CN";
-        recognition.start();
+    document.addEventListener('DOMContentLoaded', () => {
+      const micButton = document.querySelector('.mic-button');
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.lang = 'zh-CN';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
 
-        recognition.onresult = function(e) {
-          const active = document.activeElement;
-          if (active && active.tagName === "TEXTAREA") {
-            active.value += e.results[0][0].transcript;
-          }
-          recognition.stop();
-        };
-
-        recognition.onerror = function(e) {
-          recognition.stop();
-        };
-      }
-    }
+      micButton.addEventListener('click', () => {
+        const active = document.activeElement;
+        if (active.tagName.toLowerCase() === 'textarea') {
+          recognition.start();
+          recognition.onresult = event => {
+            const text = event.results[0][0].transcript;
+            active.value += text;
+          };
+        } else {
+          alert('请先点击要输入的栏位。');
+        }
+      });
+    });
   </script>
+
 </body>
 </html>
