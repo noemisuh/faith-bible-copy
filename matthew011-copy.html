@@ -2,46 +2,61 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>马太福音 第11章</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: "Arial", sans-serif;
       background-color: #f9f9f9;
       margin: 40px;
+      user-select: none;
     }
     .chapter-title {
       text-align: center;
       font-size: 28px;
+      font-weight: bold;
       margin-bottom: 30px;
+    }
+    .chapter-title img {
+      height: 32px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    .nav-arrows {
+      position: absolute;
+      top: 20px;
+      font-size: 24px;
+      color: blue;
+      text-decoration: none;
       font-weight: bold;
     }
+    .nav-left {
+      left: 20px;
+    }
+    .nav-right {
+      right: 20px;
+    }
     .verse {
-      margin-bottom: 25px;
+      background-color: #ffffff;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
     }
     .verse-number {
       font-weight: bold;
-      margin-right: 8px;
+      margin-right: 10px;
+      min-width: 24px;
     }
     textarea {
-      width: 90%;
+      flex-grow: 1;
       height: 60px;
-      margin-top: 5px;
-      padding: 8px;
-      font-size: 14px;
       resize: vertical;
       margin-left: 20px;
-      margin-right: 20px;
-    }
-    .nav-arrows {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-    }
-    .nav-arrows a {
-      text-decoration: none;
-      font-size: 24px;
-      color: blue;
+      padding: 6px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
     #mic {
       position: fixed;
@@ -51,78 +66,27 @@
       color: white;
       border: none;
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      width: 48px;
+      height: 48px;
+      font-size: 20px;
+      cursor: pointer;
     }
-    #search-box {
+    #search-container {
       position: absolute;
       top: 20px;
-      right: 40px;
+      right: 80px;
     }
-    input[type="text"] {
-      padding: 5px;
+    #search {
+      padding: 6px;
       font-size: 14px;
+      width: 200px;
     }
   </style>
-</head>
-<body>
-  <div class="nav-arrows">
-    <a href="matthew010.html">←</a>
-    <a href="matthew012.html">→</a>
-  </div>
-
-  <div id="search-box">
-    <input type="text" placeholder="搜尋經文、詞語...">
-  </div>
-
-  <div class="chapter-title">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616546.png" alt="icon" width="30" style="vertical-align: middle; margin-right: 10px;">
-    馬太福音 第11章
-  </div>
-
-  <!-- Verse List -->
-  <div class="verse-list">
-    <div class="verse"><span class="verse-number">1</span>耶稣吩咐完了十二个门徒，就离开那里，往各城去传道教训人。
-      <textarea placeholder="請在此手寫第1節內容..."></textarea>
-    </div>
-    <div class="verse"><span class="verse-number">2</span>约翰在监里听见基督所做的事，就打发两个门徒去，
-      <textarea placeholder="請在此手寫第2節內容..."></textarea>
-    </div>
-    <div class="verse"><span class="verse-number">3</span>问他说：“那将要来的是你吗？还是我们等候别人呢？”
-      <textarea placeholder="請在此手寫第3節內容..."></textarea>
-    </div>
-    <div class="verse"><span class="verse-number">4</span>耶稣回答说：“你们去，把所听见所看见的事告诉约翰，
-      <textarea placeholder="請在此手寫第4節內容..."></textarea>
-    </div>
-    <div class="verse"><span class="verse-number">5</span>就是瞎子看见，瘸子行走，长大麻风的洁净，聋子听见，死人复活，穷人有福音传给他们。
-      <textarea placeholder="請在此手寫第5節內容..."></textarea>
-    </div>
-    <div class="verse"><span class="verse-number">6</span>凡不因我跌倒的就有福了。”
-      <textarea placeholder="請在此手寫第6節內容..."></textarea>
-    </div>
-    <div class="verse"><span class="verse-number">7</span>他们走的时候，耶稣对众人讲论约翰说：“你们从前出到旷野，是要看什么呢？要看风吹动的芦苇吗？
-      <textarea placeholder="請在此手寫第7節內容..."></textarea>
-    </div>
-    <div class="verse"><span class="verse-number">8</span>你们出去到底是为什么？要看穿细软衣服的人吗？那穿细软衣服的人是在王宫里。
-      <textarea placeholder="請在此手寫第8節內容..."></textarea>
-    </div>
-    <div class="verse"><span class="verse-number">9</span>你们出去究竟是为什么？是要看先知吗？我告诉你们，是的，他比先知大多了。
-      <textarea placeholder="請在此手寫第9節內容..."></textarea>
-    </div>
-    <div class="verse"><span class="verse-number">10</span>经上记着说：‘我要差遣我的使者在你前面，预备道路’所说的就是这个人。
-      <textarea placeholder="請在此手寫第10節內容..."></textarea>
-    </div>
-    <!-- ... 계속 이어서 11~30절도 동일한 형식으로 추가 ... -->
-    <div class="verse"><span class="verse-number">30</span>因为我的轭是容易的，我的担子是轻省的。”
-      <textarea placeholder="請在此手寫第30節內容..."></textarea>
-    </div>
-  </div>
-
-  <button id="mic" class="microphone">🎤</button>
-
   <script>
+    // 복사방지
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('selectstart', event => event.preventDefault());
+
     function startDictation() {
       if (window.hasOwnProperty('webkitSpeechRecognition')) {
         const recognition = new webkitSpeechRecognition();
@@ -134,20 +98,39 @@
         recognition.onresult = function(e) {
           const active = document.activeElement;
           if (active && active.tagName === "TEXTAREA") {
-            active.value += e.results[0][0].transcript;
+            active.value = e.results[0][0].transcript;
           }
           recognition.stop();
         };
 
-        recognition.onerror = function() {
+        recognition.onerror = function(e) {
           recognition.stop();
         };
       } else {
         alert("此浏览器不支持语音识别。");
       }
     }
-
-    document.getElementById("mic").onclick = startDictation;
   </script>
+</head>
+<body>
+  <a href="matthew010-copy.html" class="nav-arrows nav-left">←</a>
+  <a href="matthew012-copy.html" class="nav-arrows nav-right">→</a>
+
+  <div id="search-container">
+    <input type="text" id="search" placeholder="搜索经文、词语..." />
+  </div>
+
+  <div class="chapter-title">
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616546.png" alt="icon">
+    马太福音 第11章
+  </div>
+
+  <div class="verse"><span class="verse-number">1</span>耶稣吩咐完了十二个门徒，就离开那里，往各城去传道教训人。<textarea placeholder="请在此手写第1节内容..."></textarea></div>
+  <div class="verse"><span class="verse-number">2</span>约翰在监里听见基督所做的事，就打发两个门徒去，<textarea placeholder="请在此手写第2节内容..."></textarea></div>
+  <div class="verse"><span class="verse-number">3</span>问他说：“那将要来的是你吗？还是我们等候别人呢？”<textarea placeholder="请在此手写第3节内容..."></textarea></div>
+  <div class="verse"><span class="verse-number">4</span>耶稣回答说：“你们去，把所听见所看见的事告诉约翰。<textarea placeholder="请在此手写第4节内容..."></textarea></div>
+  <div class="verse"><span class="verse-number">30</span>因为我的轭是容易的，我的担子是轻省的。”<textarea placeholder="请在此手写第30节内容..."></textarea></div>
+
+  <button id="mic" onclick="startDictation()">🎤</button>
 </body>
 </html>
