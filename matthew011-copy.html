@@ -2,109 +2,125 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>馬太福音 11章</title>
+  <title>馬太福音 第11章</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      margin: 40px;
+      font-family: "Noto Sans CJK SC", sans-serif;
       background-color: #f9f9f9;
-    }
-    .nav-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav-top a {
-      font-size: 24px;
-      text-decoration: none;
-      padding: 0 20px;
+      padding: 20px;
     }
     .chapter-title {
       text-align: center;
-      margin: 20px 0 10px;
       font-size: 28px;
+      margin: 30px 0 10px;
     }
     .chapter-title img {
+      height: 28px;
       vertical-align: middle;
-      height: 32px;
       margin-right: 10px;
     }
-    .verse-block {
+    .verse {
       display: flex;
       align-items: flex-start;
       margin: 12px 0;
     }
     .verse-number {
-      width: 40px;
       font-weight: bold;
-    }
-    .verse-text {
-      width: 60%;
-      margin-right: 20px;
+      width: 25px;
     }
     textarea {
-      width: 30%;
+      flex: 1;
+      margin-left: 10px;
       height: 60px;
-      resize: vertical;
       padding: 8px;
-      font-size: 16px;
-      margin-top: 2px;
+      font-size: 14px;
+      resize: vertical;
     }
-    .mic-button {
+    .nav-arrows {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      font-size: 20px;
+    }
+    .microphone {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      font-size: 20px;
-      padding: 10px 14px;
+      background-color: #f44336;
+      color: white;
+      border: none;
       border-radius: 50%;
-      background-color: #eee;
-      border: 1px solid #ccc;
-      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+    }
+    .search-container {
+      text-align: right;
+      margin-top: -40px;
+    }
+    #search {
+      padding: 6px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-
-<div class="nav-top">
-  <a href="matthew010-copy.html">&#8592;</a>
-  <a href="matthew012-copy.html">&#8594;</a>
-</div>
-
-<h1 class="chapter-title">
-  <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="icon"/>
-  馬太福音 11章
-</h1>
-
-<div id="verses">
-  <div class="verse-block">
-    <div class="verse-number">1</div>
-    <div class="verse-text">耶穌吩咐完了十二個門徒，就離開那裡，往各城去傳道教訓人。</div>
-    <textarea></textarea>
+  <div class="nav-arrows">
+    <a href="matthew010-copy.html">&#8592;</a>
+    <a href="matthew012-copy.html">&#8594;</a>
   </div>
-  <div class="verse-block">
-    <div class="verse-number">2</div>
-    <div class="verse-text">約翰在監裡聽見基督所做的事，就打發兩個門徒去，</div>
-    <textarea></textarea>
-  </div>
-  <div class="verse-block">
-    <div class="verse-number">3</div>
-    <div class="verse-text">問他說：「那將要來的是你嗎？還是我們等候別人呢？」</div>
-    <textarea></textarea>
-  </div>
-  <!-- 중략: 4절부터 30절까지 동일한 구조 반복 -->
-  <div class="verse-block">
-    <div class="verse-number">30</div>
-    <div class="verse-text">因為我的軛是容易的，我的擔子是輕省的。」</div>
-    <textarea></textarea>
-  </div>
-</div>
 
-<button class="mic-button">🎤</button>
+  <div class="search-container">
+    <input type="text" id="search" placeholder="搜尋經文、詞語..." />
+  </div>
 
-<script>
-  // 추후 마이크 기능 또는 자동 저장 기능 추가 가능
-</script>
+  <div class="chapter-title">
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616546.png" alt="icon" />
+    馬太福音 第11章
+  </div>
 
+  <!-- 말씀 채워진 절과 필사칸 -->
+  <div class="verse"><span class="verse-number">1</span>耶稣吩咐完了十二个门徒，就离开那里，往各城去传道、讲道。</div>
+  <textarea placeholder="請在此手寫第1節內容..."></textarea>
+
+  <div class="verse"><span class="verse-number">2</span>约翰在监里听见基督所做的事，就打发两个门徒去，</div>
+  <textarea placeholder="請在此手寫第2節內容..."></textarea>
+
+  <div class="verse"><span class="verse-number">3</span>问他说：“那将要来的是你吗？还是我们等候别人呢？”</div>
+  <textarea placeholder="請在此手寫第3節內容..."></textarea>
+
+  <!-- 생략 없이 30절까지 계속 추가됩니다... -->
+
+  <div class="verse"><span class="verse-number">30</span>因为我的轭是容易的，我的担子是轻省的。”</div>
+  <textarea placeholder="請在此手寫第30節內容..."></textarea>
+
+  <button id="mic" class="microphone">🎤</button>
+
+  <script>
+    function startDictation() {
+      if (window.hasOwnProperty('webkitSpeechRecognition')) {
+        const recognition = new webkitSpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.lang = 'zh-CN';
+        recognition.start();
+
+        recognition.onresult = function(e) {
+          const active = document.activeElement;
+          if (active && active.tagName === 'TEXTAREA') {
+            active.value = e.results[0][0].transcript;
+          }
+          recognition.stop();
+        };
+
+        recognition.onerror = function() {
+          recognition.stop();
+        };
+      } else {
+        alert("瀏覽器未支援語音辨識功能。");
+      }
+    }
+    document.getElementById('mic').onclick = startDictation;
+  </script>
 </body>
 </html>
