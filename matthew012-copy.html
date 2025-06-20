@@ -1,117 +1,112 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <title>马太福音 第12章</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      margin: 40px;
-      padding: 0;
-      background-color: #fff;
-      user-select: none;
-    }
-    h1 {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 40px;
+      font-family: sans-serif;
+      margin: 0 15%;
     }
     .nav-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-top: 20px;
     }
-    .nav-top a, .nav-top input {
-      font-size: 14px;
+    .chapter-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      margin: 20px 0 10px 0;
     }
-    .nav-icon {
-      background-color: #004aad;
+    .nav-arrows {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .nav-arrows a {
+      font-size: 28px;
+      text-decoration: none;
+      padding: 8px 20px;
+      background-color: #005bbb;
       color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 15px;
-      font-size: 16px;
-      cursor: pointer;
+      border-radius: 6px;
     }
     .verse-block {
-      margin: 20px 0;
+      margin-bottom: 20px;
     }
     .verse-number {
       font-weight: bold;
-      margin-right: 8px;
     }
     textarea {
       width: 100%;
-      height: 60px;
-      margin-top: 5px;
+      height: 50px;
       font-size: 15px;
-      padding: 8px;
-      resize: vertical;
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
     .mic-button {
       position: fixed;
       bottom: 30px;
       right: 30px;
-      background-color: #ff4d4d;
+      background-color: #f44336;
+      color: white;
       border: none;
       border-radius: 50%;
-      padding: 15px;
-      font-size: 20px;
-      color: white;
+      width: 48px;
+      height: 48px;
+      font-size: 24px;
       cursor: pointer;
     }
   </style>
+</head>
+<body>
+
+  <div class="nav-top">
+    <div><a href="#">📖 圣经目录 | 马太福音</a></div>
+    <div><input type="text" placeholder="搜索经文、词语…" /></div>
+  </div>
+
+  <div class="chapter-title">马太福音 第12章</div>
+
+  <div class="nav-arrows">
+    <a href="matthew011.html">&#8592;</a>
+    <a href="matthew013.html">&#8594;</a>
+  </div>
+
+  <div class="verse-block">
+    <span class="verse-number">1</span>
+    那时，耶稣在安息日从麦地经过。他的门徒饿了，就掐起麦穗来吃。
+    <br>
+    <textarea placeholder="请输入手写第1节内容…"></textarea>
+  </div>
+
+  <button class="mic-button" onclick="startDictation()">🎤</button>
+
   <script>
-    document.addEventListener('contextmenu', event => event.preventDefault());
     function startDictation() {
       if (window.hasOwnProperty('webkitSpeechRecognition')) {
         const recognition = new webkitSpeechRecognition();
         recognition.continuous = false;
         recognition.interimResults = false;
-        recognition.lang = 'zh-CN';
+        recognition.lang = "zh-CN";
         recognition.start();
-        recognition.onresult = function (e) {
-          document.activeElement.value += e.results[0][0].transcript;
+
+        recognition.onresult = function(e) {
+          const active = document.activeElement;
+          if (active && active.tagName === "TEXTAREA") {
+            active.value += e.results[0][0].transcript;
+          }
           recognition.stop();
         };
-        recognition.onerror = function () {
+
+        recognition.onerror = function(e) {
           recognition.stop();
         };
       }
     }
   </script>
-</head>
-<body>
-
-<div class="nav-top">
-  <a href="#">📖 圣经目录 | 马太福音</a>
-  <input type="text" placeholder="搜索经文、词语..." />
-</div>
-
-<h1>马太福音 第12章</h1>
-
-<div class="nav-top">
-  <a href="matthew011.html" class="nav-icon">⬅</a>
-  <a href="matthew013.html" class="nav-icon">➡</a>
-</div>
-
-<!-- 1~50절 구절 및 필사란 -->
-<!-- 아래는 일부만 예시로, 이어서 전체 50절을 채워드릴게요 -->
-
-<div class="verse-block"><span class="verse-number">1</span>那时，耶稣在安息日从麦地经过。他的门徒饿了，就掐起麦穗来吃。
-  <br><textarea placeholder="请输入手写第1节内容..."></textarea></div>
-
-<div class="verse-block"><span class="verse-number">2</span>法利赛人看见，就对耶稣说：“看哪，你的门徒做安息日不可做的事了。”
-  <br><textarea placeholder="请输入手写第2节内容..."></textarea></div>
-
-<div class="verse-block"><span class="verse-number">3</span>耶稣对他们说：“经上记着大卫和跟从他的人饥饿之时所做的事，你们没有念过吗？
-  <br><textarea placeholder="请输入手写第3节内容..."></textarea></div>
-
-<!-- 계속 이어서 50절까지 이어드릴게요 -->
-<!-- 요청하시면 4절~50절 전체 채워드릴게요 -->
-
-<!-- 마이크 버튼 -->
-<button class="mic-button" onclick="startDictation()">🎙️</button>
 
 </body>
 </html>
