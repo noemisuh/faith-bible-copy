@@ -114,32 +114,3 @@
   </div>
 </body>
 </html>
-
-  <button class="mic-button" onclick="startDictation()">🎤</button>
-
-  <script>
-    function startDictation() {
-      if (window.hasOwnProperty('webkitSpeechRecognition')) {
-        const recognition = new webkitSpeechRecognition();
-        recognition.continuous = false;
-        recognition.interimResults = false;
-        recognition.lang = "zh-CN";
-        recognition.start();
-
-        recognition.onresult = function(e) {
-          const active = document.activeElement;
-          if (active && active.tagName === "TEXTAREA") {
-            active.value += e.results[0][0].transcript;
-          }
-          recognition.stop();
-        };
-
-        recognition.onerror = function(e) {
-          recognition.stop();
-        };
-      }
-    }
-  </script>
-
-</body>
-</html>
