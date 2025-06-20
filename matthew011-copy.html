@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>马太福音 第11章</title>
   <style>
     body {
       font-family: "Noto Sans SC", sans-serif;
-      margin: 40px 80px;
+      margin: 40px 10%;
       line-height: 1.8;
       user-select: none;
     }
@@ -14,33 +14,44 @@
       text-align: center;
       margin-bottom: 10px;
     }
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      margin: 30px 0;
-    }
-    .nav a {
-      text-decoration: none;
-      font-size: 24px;
-      background: #005bbb;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-    }
     .verse {
-      margin: 12px 0;
+      margin: 10px 0;
     }
     .verse-number {
       font-weight: bold;
-      margin-right: 8px;
+      margin-right: 6px;
     }
     textarea {
       width: 100%;
-      height: 40px;
+      height: 45px;
+      font-size: 16px;
       margin-top: 4px;
+      padding: 8px;
+      resize: vertical;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0 30px;
+    }
+    .nav a {
+      font-size: 20px;
+      text-decoration: none;
+      background-color: #005bbb;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .top-bar input {
       font-size: 16px;
       padding: 6px;
-      resize: vertical;
+      width: 250px;
     }
     .no-copy {
       -webkit-user-select: none;
@@ -56,24 +67,27 @@
       color: white;
       border: none;
       border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 30px;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
       cursor: pointer;
-      z-index: 1000;
     }
   </style>
 </head>
 <body class="no-copy">
-
-  <div class="nav">
-    <a href="matthew010-copy.html">⬅️</a>
-    <a href="matthew012-copy.html">➡️</a>
+  <div class="top-bar">
+    <div>📖 圣经目录 | 马太福音</div>
+    <input type="text" placeholder="搜索经文、词语...">
   </div>
 
   <h1>马太福音 第11章</h1>
 
-  <div class="verse"><span class="verse-number">1</span>耶稣吩咐完了十二个门徒，就离开那里，往各城去传道，讲道。</div>
+  <div class="nav">
+    <a href="matthew010.html">⬅️</a>
+    <a href="matthew012.html">➡️</a>
+  </div>
+
+  <div class="verse"><span class="verse-number">1</span>耶稣吩咐完了十二个门徒，就离开那里，往各城去传道、讲道。</div>
   <textarea placeholder="请输入手写第1节内容…"></textarea>
 
   <div class="verse"><span class="verse-number">2</span>约翰在监里听见基督所作的事，就打发两个门徒去，</div>
@@ -88,13 +102,7 @@
   <div class="verse"><span class="verse-number">5</span>就是瞎子看见，瘸子行走，长大麻风的洁净，聋子听见，死人复活，穷人有福音传给他们。</div>
   <textarea placeholder="请输入手写第5节内容…"></textarea>
 
-  <div class="verse"><span class="verse-number">6</span>凡不因我跌倒的就有福了！”</div>
-  <textarea placeholder="请输入手写第6节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">7</span>他们走的时候，耶稣就对众人讲论约翰说：“你们从前出到旷野，是要看什么呢？要看风吹动的芦苇吗？</div>
-  <textarea placeholder="请输入手写第7节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">...</span>（此处略去部分内容，为简洁起见，请继续补充）</div>
+  <!-- 여기에 6~30절도 이어서 동일한 형식으로 추가 가능 -->
 
   <button class="mic-button" onclick="startDictation()">🎤</button>
 
@@ -106,7 +114,6 @@
         recognition.interimResults = false;
         recognition.lang = "zh-CN";
         recognition.start();
-
         recognition.onresult = function (e) {
           const active = document.activeElement;
           if (active && active.tagName === "TEXTAREA") {
@@ -114,7 +121,7 @@
           }
           recognition.stop();
         };
-        recognition.onerror = function () {
+        recognition.onerror = function (e) {
           recognition.stop();
         };
       } else {
@@ -122,6 +129,5 @@
       }
     }
   </script>
-
 </body>
 </html>
