@@ -1,160 +1,171 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <title>马太福音 4章</title>
+  <meta charset="UTF-8">
+  <title>马太福音  第4章</title>
   <style>
     body {
       font-family: "Noto Sans SC", sans-serif;
-      line-height: 1.6;
-      margin: 40px;
-      padding: 0 10%;
+      margin: 40px 10%;
+      line-height: 1.8;
       user-select: none;
     }
     h1 {
       text-align: center;
-      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .verse {
+      margin: 10px 0;
+    }
+    .verse-number {
+      font-weight: bold;
+      margin-right: 6px;
+    }
+    textarea {
+      width: 100%;
+      height: 45px;
+      font-size: 16px;
+      margin-top: 4px;
+      padding: 8px;
+      resize: vertical;
     }
     .nav {
       display: flex;
       justify-content: space-between;
-      margin: 20px 0;
+      margin: 20px 0 30px;
     }
-    .verse {
-      margin-bottom: 10px;
-    }
-    .verse span.num {
-      display: inline-block;
-      width: 2em;
-      font-weight: bold;
-      margin-right: 10px;
-    }
-    textarea {
-      width: 100%;
-      height: 60px;
-      margin-top: 4px;
-      margin-bottom: 20px;
-      resize: vertical;
-      font-size: 1em;
-    }
-    .mic-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #f44336;
+    .nav a {
+      font-size: 20px;
+      text-decoration: none;
+      background-color: #005bbb;
       color: white;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 1.5em;
-      cursor: pointer;
+      padding: 8px 14px;
+      border-radius: 6px;
     }
     .top-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 30px;
+      margin-bottom: 12px;
     }
     .top-bar input {
-      font-size: 1em;
-      padding: 5px;
-      width: 40%;
+      font-size: 16px;
+      padding: 6px;
+      width: 250px;
     }
-    .top-bar .list {
-      font-weight: bold;
+    .no-copy {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .mic-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
     }
   </style>
 </head>
-<body>
+<body class="no-copy">
   <div class="top-bar">
-    <div class="list">📖 圣经目录 | 马太福音</div>
-    <input type="text" placeholder="搜索经文、词语…" />
+    <div>📖 圣经目录 | 马太福音</div>
+    <input type="text" placeholder="搜索经文、词语...">
   </div>
 
-  <h1>📜 马太福音 第4章</h1>
+  <h1>马太福音&ensp;第4章</h1>
 
   <div class="nav">
-    <a href="matthew003.html">← 上一章</a>
-    <a href="matthew005.html">下一章 →</a>
+    <a href="matthew003.html">⬅️</a>
+    <a href="matthew005.html">➡️</a>
   </div>
 
-  <div class="verse"><span class="num">1</span>当时，耶稣被圣灵引到旷野，受魔鬼的试探。</div>
-  <textarea placeholder="请在此手写第1节内容..."></textarea>
+  <div class="verse"><span class="verse-number">1</span> 当时，耶稣被圣灵引到旷野，受魔鬼的试探。</div>
+  <textarea placeholder="请输入手写第1节内容…"></textarea>
 
-  <div class="verse"><span class="num">2</span>他禁食四十昼夜，后来就饿了。</div>
-  <textarea placeholder="请在此手写第2节内容..."></textarea>
+  <div class="verse"><span class="verse-number">2</span> 他禁食四十昼夜，后来就饿了。</div>
+  <textarea placeholder="请输入手写第2节内容…"></textarea>
 
-  <div class="verse"><span class="num">3</span>那试探人的进前来，对他说：“你若是神的儿子，可以吩咐这些石头变成食物。”</div>
-  <textarea placeholder="请在此手写第3节内容..."></textarea>
+  <div class="verse"><span class="verse-number">3</span> 那试探人的进前来，对他说：“你若是　神的儿子，可以吩咐这些石头变成食物。”</div>
+  <textarea placeholder="请输入手写第3节内容…"></textarea>
 
-  <div class="verse"><span class="num">4</span>耶稣却回答说：“经上记着说：‘人活着不是单靠食物，乃是靠神口里所出的一切话。’”</div>
-  <textarea placeholder="请在此手写第4节内容..."></textarea>
+  <div class="verse"><span class="verse-number">4</span> 耶稣却回答说：“经上记着：‘人活着，不是单靠食物，乃是靠　神口里所出的一切话。’”</div>
+  <textarea placeholder="请输入手写第4节内容…"></textarea>
 
-  <div class="verse"><span class="num">5</span>魔鬼就带他进了圣城，叫他站在殿顶上，</div>
-  <textarea placeholder="请在此手写第5节内容..."></textarea>
+  <div class="verse"><span class="verse-number">5</span> 魔鬼就带他进了圣城，叫他站在殿顶上，</div>
+  <textarea placeholder="请输入手写第5节内容…"></textarea>
 
-  <div class="verse"><span class="num">6</span>对他说：“你若是神的儿子，可以跳下去；因为经上记着：‘主要为你吩咐他的使者，用手托着你，免得你的脚碰在石头上。’”</div>
-  <textarea placeholder="请在此手写第6节内容..."></textarea>
+  <div class="verse"><span class="verse-number">6</span> 对他说：“你若是　神的儿子，可以跳下去；因为经上记着：‘主要为你吩咐他的使者，用手托着你，免得你的脚碰在石头上。’”</div>
+  <textarea placeholder="请输入手写第6节内容…"></textarea>
 
-  <div class="verse"><span class="num">7</span>耶稣对他说：“经上又记着说：‘不可试探主你的神。’”</div>
-  <textarea placeholder="请在此手写第7节内容..."></textarea>
+  <div class="verse"><span class="verse-number">7</span> 耶稣对他说：“经上又记着：‘不可试探主你的　神。’”</div>
+  <textarea placeholder="请输入手写第7节内容…"></textarea>
 
-  <div class="verse"><span class="num">8</span>魔鬼又带他上了一座最高的山，将世上的万国与万国的荣华都指给他看，</div>
-  <textarea placeholder="请在此手写第8节内容..."></textarea>
+  <div class="verse"><span class="verse-number">8</span> 魔鬼又带他上了一座最高的山，将世上的万国与万国的荣华都指给他看，</div>
+  <textarea placeholder="请输入手写第8节内容…"></textarea>
 
-  <div class="verse"><span class="num">9</span>对他说：“你若俯伏拜我，我就把这一切都赐给你。”</div>
-  <textarea placeholder="请在此手写第9节内容..."></textarea>
+  <div class="verse"><span class="verse-number">9</span> 对他说：“你若俯伏拜我，我就把这一切都赐给你。”</div>
+  <textarea placeholder="请输入手写第9节内容…"></textarea>
 
-  <div class="verse"><span class="num">10</span>耶稣说：“撒但退去吧！因为经上记着说：‘当拜主你的神，单要事奉他。’”</div>
-  <textarea placeholder="请在此手写第10节内容..."></textarea>
+  <div class="verse"><span class="verse-number">10</span> 耶稣说：“撒但退去吧！因为经上记着：‘当拜主你的　神，单要事奉他。’”</div>
+  <textarea placeholder="请输入手写第10节内容…"></textarea>
 
-  <div class="verse"><span class="num">11</span>于是魔鬼离了耶稣，有天使来伺候他。</div>
-  <textarea placeholder="请在此手写第11节内容..."></textarea>
+  <div class="verse"><span class="verse-number">11</span> 于是魔鬼离了耶稣，有天使来伺候他。</div>
+  <textarea placeholder="请输入手写第11节内容…"></textarea>
 
-  <div class="verse"><span class="num">12</span>耶稣听见约翰下了监，就退到加利利去。</div>
-  <textarea placeholder="请在此手写第12节内容..."></textarea>
+  <div class="verse"><span class="verse-number">12</span> 耶稣听见约翰下了监，就退到加利利去。</div>
+  <textarea placeholder="请输入手写第12节内容…"></textarea>
 
-  <div class="verse"><span class="num">13</span>后又离开拿撒勒，往迦百农去，就住在那里。那地方靠海，在西布伦和拿弗他利的境内。</div>
-  <textarea placeholder="请在此手写第13节内容..."></textarea>
+  <div class="verse"><span class="verse-number">13</span> 后又离开拿撒勒，往迦百农去，就住在那里；那地方靠海，在西布伦和拿弗他利的边界上。</div>
+  <textarea placeholder="请输入手写第13节内容…"></textarea>
 
-  <div class="verse"><span class="num">14</span>这是要应验先知以赛亚的话，</div>
-  <textarea placeholder="请在此手写第14节内容..."></textarea>
+  <div class="verse"><span class="verse-number">14</span> 这是要应验先知以赛亚的话，</div>
+  <textarea placeholder="请输入手写第14节内容…"></textarea>
 
-  <div class="verse"><span class="num">15</span>说：“西布伦地、拿弗他利地，就是沿海的路，约旦河外，外邦人的加利利地，</div>
-  <textarea placeholder="请在此手写第15节内容..."></textarea>
+  <div class="verse"><span class="verse-number">15</span> 说：“西布伦地，拿弗他利地，就是沿海的路，约旦河外，外邦人的加利利地——</div>
+  <textarea placeholder="请输入手写第15节内容…"></textarea>
 
-  <div class="verse"><span class="num">16</span>那坐在黑暗里的百姓看见了大光；坐在死荫之地的人有光发现照着他们。”</div>
-  <textarea placeholder="请在此手写第16节内容..."></textarea>
+  <div class="verse"><span class="verse-number">16</span> 那坐在黑暗里的百姓看见了大光；坐在死荫之地的人，有光发现照着他们。”</div>
+  <textarea placeholder="请输入手写第16节内容…"></textarea>
 
-  <div class="verse"><span class="num">17</span>从那时候，耶稣就传起道来，说：“天国近了，你们应当悔改！”</div>
-  <textarea placeholder="请在此手写第17节内容..."></textarea>
+  <div class="verse"><span class="verse-number">17</span> 从那时候，耶稣就传起道来，说：“天国近了！你们应当悔改！”</div>
+  <textarea placeholder="请输入手写第17节内容…"></textarea>
 
-  <div class="verse"><span class="num">18</span>耶稣在加利利海边行走，看见弟兄二人，就是那称呼彼得的西门和他兄弟安得烈，在海里撒网；他们本是打鱼的。</div>
-  <textarea placeholder="请在此手写第18节内容..."></textarea>
+  <div class="verse"><span class="verse-number">18</span> 耶稣在加利利海边行走，看见弟兄二人，就是那称呼彼得的西门，和他兄弟安得烈，在海里撒网；他们本是打鱼的。</div>
+  <textarea placeholder="请输入手写第18节内容…"></textarea>
 
-  <div class="verse"><span class="num">19</span>耶稣对他们说：“来跟从我，我要叫你们得人如得鱼一样。”</div>
-  <textarea placeholder="请在此手写第19节内容..."></textarea>
+  <div class="verse"><span class="verse-number">19</span> 耶稣对他们说：“来跟从我，我要叫你们得人如得鱼一样。”</div>
+  <textarea placeholder="请输入手写第19节内容…"></textarea>
 
-  <div class="verse"><span class="num">20</span>他们就立刻舍了网，跟从了他。</div>
-  <textarea placeholder="请在此手写第20节内容..."></textarea>
+  <div class="verse"><span class="verse-number">20</span> 他们就立刻舍了网，跟从了他。</div>
+  <textarea placeholder="请输入手写第20节内容…"></textarea>
 
-  <div class="verse"><span class="num">21</span>从那里往前走，又看见弟兄二人，就是西庇太的儿子雅各和他兄弟约翰，同他们的父亲西庇太在船上补网。耶稣就招呼他们，</div>
-  <textarea placeholder="请在此手写第21节内容..."></textarea>
+  <div class="verse"><span class="verse-number">21</span> 从那里往前走，又看见弟兄二人，就是西庇太的儿子雅各，和他兄弟约翰，同他们的父亲西庇太在船上补网，耶稣就招呼他们。</div>
+  <textarea placeholder="请输入手写第21节内容…"></textarea>
 
-  <div class="verse"><span class="num">22</span>他们立刻舍了船，别了父亲，跟从了耶稣。</div>
-  <textarea placeholder="请在此手写第22节内容..."></textarea>
+  <div class="verse"><span class="verse-number">22</span> 他们立刻舍了船，别了父亲，跟从了耶稣。</div>
+  <textarea placeholder="请输入手写第22节内容…"></textarea>
 
-  <div class="verse"><span class="num">23</span>耶稣走遍加利利，在各会堂里教训人，传天国的福音，医治百姓各样的病症。</div>
-  <textarea placeholder="请在此手写第23节内容..."></textarea>
+  <div class="verse"><span class="verse-number">23</span> 耶稣走遍加利利，在各会堂里教训人，传天国的福音，医治百姓各样的病症。</div>
+  <textarea placeholder="请输入手写第23节内容…"></textarea>
 
-  <div class="verse"><span class="num">24</span>他的名声就传遍了叙利亚。那里的人把一切害病的，就是害各样疾病、各样疼痛的和被鬼附的、癫痫的、瘫痪的，都带了来，耶稣就治好了他们。</div>
-  <textarea placeholder="请在此手写第24节内容..."></textarea>
+  <div class="verse"><span class="verse-number">24</span> 他的名声传遍了叙利亚。那里的人把一切害病的，就是害各样疾病、各样疼痛的和被鬼附的、癫痫的、瘫痪的，都带了来，耶稣就治好了他们。</div>
+  <textarea placeholder="请输入手写第24节内容…"></textarea>
 
-  <div class="verse"><span class="num">25</span>当时，有许多人从加利利、低加波利、耶路撒冷、犹太、约旦河外来跟着他。</div>
-  <textarea placeholder="请在此手写第25节内容..."></textarea>
+  <div class="verse"><span class="verse-number">25</span> 当下，有许多人从加利利、低加波利、耶路撒冷、犹太，和约旦河外来跟着他。</div>
+  <textarea placeholder="请输入手写第25节内容…"></textarea>
 
-  <button class="mic-btn" onclick="startDictation()">🎤</button>
+</body>
+</html>
+
+  <button class="mic-button" onclick="startDictation()">🎤</button>
 
   <script>
     function startDictation() {
@@ -162,22 +173,20 @@
         const recognition = new webkitSpeechRecognition();
         recognition.continuous = false;
         recognition.interimResults = false;
-        recognition.lang = 'zh-CN';
+        recognition.lang = "zh-CN";
         recognition.start();
-
         recognition.onresult = function (e) {
           const active = document.activeElement;
-          if (active && active.tagName === 'TEXTAREA') {
+          if (active && active.tagName === "TEXTAREA") {
             active.value += e.results[0][0].transcript;
           }
           recognition.stop();
         };
-
-        recognition.onerror = function () {
+        recognition.onerror = function (e) {
           recognition.stop();
         };
       } else {
-        alert('此浏览器不支持语音识别。');
+        alert("当前浏览器不支持语音识别。");
       }
     }
   </script>
