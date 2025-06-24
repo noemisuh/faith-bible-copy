@@ -1,172 +1,182 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <title>马太福音 7章</title>
+  <meta charset="UTF-8">
+  <title>马太福音  第7章</title>
   <style>
     body {
       font-family: "Noto Sans SC", sans-serif;
-      line-height: 1.6;
-      margin: 40px;
-      padding: 0 10%;
+      margin: 40px 10%;
+      line-height: 1.8;
       user-select: none;
     }
     h1 {
       text-align: center;
-      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .verse {
+      margin: 10px 0;
+    }
+    .verse-number {
+      font-weight: bold;
+      margin-right: 6px;
+    }
+    textarea {
+      width: 100%;
+      height: 45px;
+      font-size: 16px;
+      margin-top: 4px;
+      padding: 8px;
+      resize: vertical;
     }
     .nav {
       display: flex;
       justify-content: space-between;
-      margin: 20px 0;
+      margin: 20px 0 30px;
     }
-    .verse {
-      margin-bottom: 10px;
-    }
-    .verse span.num {
-      display: inline-block;
-      width: 2em;
-      font-weight: bold;
-      margin-right: 10px;
-    }
-    textarea {
-      width: 100%;
-      height: 60px;
-      margin-top: 4px;
-      margin-bottom: 20px;
-      resize: vertical;
-      font-size: 1em;
-    }
-    .mic-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #f44336;
+    .nav a {
+      font-size: 10px;
+      text-decoration: none;
+      background-color: #005bbb;
       color: white;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 1.5em;
-      cursor: pointer;
+      padding: 8px 14px;
+      border-radius: 6px;
     }
     .top-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 30px;
+      margin-bottom: 12px;
     }
     .top-bar input {
-      font-size: 1em;
-      padding: 5px;
-      width: 40%;
+      font-size: 16px;
+      padding: 6px;
+      width: 250px;
     }
-    .top-bar .list {
-      font-weight: bold;
+    .no-copy {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .mic-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
     }
   </style>
 </head>
-<body>
+<body class="no-copy">
   <div class="top-bar">
-    <div class="list">📖 圣经目录 | 马太福音</div>
-    <input type="text" placeholder="搜索经文、词语…" />
+    <div>📖 圣经目录 | 马太福音</div>
+    <input type="text" placeholder="搜索经文、词语...">
   </div>
 
-  <h1>📜 马太福音 第7章</h1>
+  <h1>马太福音&ensp;第7章</h1>
 
   <div class="nav">
-    <a href="matthew006.html">← 上一章</a>
-    <a href="matthew008.html">下一章 →</a>
+    <a href="matthew006.html">←</a>
+    <a href="matthew008.html">→</a>
   </div>
 
-  <div class="verse"><span class="num">1</span>“你们不要论断人，免得你们被论断。”</div>
-  <textarea placeholder="请在此手写第1节内容..."></textarea>
+  <div class="verse"><span class="verse-number">1</span> 你们不要论断人，免得你们被论断。</div>
+  <textarea placeholder="请输入手写第1节内容…"></textarea>
 
-  <div class="verse"><span class="num">2</span>“因为你们怎样论断人，也必怎样被论断；你们用什么量器量给人，也必用什么量器量给你们。”</div>
-  <textarea placeholder="请在此手写第2节内容..."></textarea>
+  <div class="verse"><span class="verse-number">2</span> 因为你们怎样论断人，也必怎样被论断；你们用什么量器量给人，也必用什么量器量给你们。</div>
+  <textarea placeholder="请输入手写第2节内容…"></textarea>
 
-  <div class="verse"><span class="num">3</span>“为什么看见你弟兄眼中有刺，却不想自己眼中有梁木呢？”</div>
-  <textarea placeholder="请在此手写第3节内容..."></textarea>
+  <div class="verse"><span class="verse-number">3</span> 为甚么看见你弟兄眼中有刺，却不想自己眼中有梁木呢？</div>
+  <textarea placeholder="请输入手写第3节内容…"></textarea>
 
-  <div class="verse"><span class="num">4</span>“你自己眼中有梁木，怎能对你弟兄说：‘容我去掉你眼中的刺’呢？”</div>
-  <textarea placeholder="请在此手写第4节内容..."></textarea>
+  <div class="verse"><span class="verse-number">4</span> 你自己眼中有梁木，怎能对你弟兄说：容我去掉你眼中的刺呢？</div>
+  <textarea placeholder="请输入手写第4节内容…"></textarea>
 
-  <div class="verse"><span class="num">5</span>“你这假冒为善的人，先去掉自己眼中的梁木，然后才能看得清楚，去掉你弟兄眼中的刺。”</div>
-  <textarea placeholder="请在此手写第5节内容..."></textarea>
+  <div class="verse"><span class="verse-number">5</span> 你这假冒为善的人，先去掉自己眼中的梁木，然后才能看得清楚，去掉你弟兄眼中的刺。</div>
+  <textarea placeholder="请输入手写第5节内容…"></textarea>
 
-  <div class="verse"><span class="num">6</span>“不要把圣物给狗，也不要把你们的珍珠丢在猪前，恐怕它践踏了珍珠，转过来咬你们。”</div>
-  <textarea placeholder="请在此手写第6节内容..."></textarea>
+  <div class="verse"><span class="verse-number">6</span> 不要把圣物给狗，也不要把你们的珍珠丢在猪前，恐怕它践踏了珍珠，转过来咬你们。</div>
+  <textarea placeholder="请输入手写第6节内容…"></textarea>
 
-  <div class="verse"><span class="num">7</span>“你们祈求，就给你们；寻找，就寻见；叩门，就给你们开门。”</div>
-  <textarea placeholder="请在此手写第7节内容..."></textarea>
+  <div class="verse"><span class="verse-number">7</span> 你们祈求，就给你们；寻找，就寻见；叩门，就给你们开门。</div>
+  <textarea placeholder="请输入手写第7节内容…"></textarea>
 
-  <div class="verse"><span class="num">8</span>“因为凡祈求的就得着，寻找的就寻见，叩门的就给他开门。”</div>
-  <textarea placeholder="请在此手写第8节内容..."></textarea>
+  <div class="verse"><span class="verse-number">8</span> 因为凡祈求的，就得着；寻找的，就寻见；叩门的，就给他开门。</div>
+  <textarea placeholder="请输入手写第8节内容…"></textarea>
 
-  <div class="verse"><span class="num">9</span>“你们中间谁有儿子求饼，反给他石头呢？”</div>
-  <textarea placeholder="请在此手写第9节内容..."></textarea>
+  <div class="verse"><span class="verse-number">9</span> 你们中间谁有儿子求饼，反给他石头呢？</div>
+  <textarea placeholder="请输入手写第9节内容…"></textarea>
 
-  <div class="verse"><span class="num">10</span>“求鱼，反给他蛇呢？”</div>
-  <textarea placeholder="请在此手写第10节内容..."></textarea>
+  <div class="verse"><span class="verse-number">10</span> 求鱼，反给他蛇呢？</div>
+  <textarea placeholder="请输入手写第10节内容…"></textarea>
 
-  <div class="verse"><span class="num">11</span>“你们虽然不好，尚且知道拿好东西给儿女，何况你们在天上的父，岂不更把好东西给求他的人吗？”</div>
-  <textarea placeholder="请在此手写第11节内容..."></textarea>
+  <div class="verse"><span class="verse-number">11</span> 你们虽然不好，尚且知道拿好东西给儿女；何况你们在天上的父，岂不更把好东西给求他的人吗？</div>
+  <textarea placeholder="请输入手写第11节内容…"></textarea>
 
-  <div class="verse"><span class="num">12</span>“所以，无论何事，你们愿意人怎样待你们，你们也要怎样待人；因为这就是律法和先知的道理。”</div>
-  <textarea placeholder="请在此手写第12节内容..."></textarea>
+  <div class="verse"><span class="verse-number">12</span> 所以，无论何事，你们愿意人怎样待你们，你们也要怎样待人；因为这就是律法和先知的道理。</div>
+  <textarea placeholder="请输入手写第12节内容…"></textarea>
 
-  <div class="verse"><span class="num">13</span>“你们要进窄门。因为引到灭亡，那门是宽的，路是大的，进去的人也多；</div>
-  <textarea placeholder="请在此手写第13节内容..."></textarea>
+  <div class="verse"><span class="verse-number">13</span> 你们要进窄门。因为引到灭亡，那门是宽的，路是大的，进去的人也多；</div>
+  <textarea placeholder="请输入手写第13节内容…"></textarea>
 
-  <div class="verse"><span class="num">14</span>引到永生，那门是窄的，路是小的，找着的人也少。”</div>
-  <textarea placeholder="请在此手写第14节内容..."></textarea>
+  <div class="verse"><span class="verse-number">14</span> 引到永生，那门是窄的，路是小的，找着的人也少。</div>
+  <textarea placeholder="请输入手写第14节内容…"></textarea>
 
-  <div class="verse"><span class="num">15</span>“你们要防备假先知；他们到你们这里来，外面披着羊皮，里面却是残暴的狼。”</div>
-  <textarea placeholder="请在此手写第15节内容..."></textarea>
+  <div class="verse"><span class="verse-number">15</span> 你们要防备假先知；他们到你们这里来，外面披着羊皮，里面却是残暴的狼。</div>
+  <textarea placeholder="请输入手写第15节内容…"></textarea>
 
-  <div class="verse"><span class="num">16</span>“凭着他们的果子，就可以认出他们来。荆棘上岂能摘葡萄呢？蒺藜里岂能摘无花果呢？”</div>
-  <textarea placeholder="请在此手写第16节内容..."></textarea>
+  <div class="verse"><span class="verse-number">16</span> 凭着他们的果子，就可以认出他们来。荆棘上岂能摘葡萄呢？蒺藜里岂能摘无花果呢？</div>
+  <textarea placeholder="请输入手写第16节内容…"></textarea>
 
-  <div class="verse"><span class="num">17</span>“这样，凡好树都结好果子，惟独坏树结坏果子。”</div>
-  <textarea placeholder="请在此手写第17节内容..."></textarea>
+  <div class="verse"><span class="verse-number">17</span> 这样，凡好树都结好果子；惟独坏树结坏果子。</div>
+  <textarea placeholder="请输入手写第17节内容…"></textarea>
 
-  <div class="verse"><span class="num">18</span>“好树不能结坏果子，坏树不能结好果子。”</div>
-  <textarea placeholder="请在此手写第18节内容..."></textarea>
+  <div class="verse"><span class="verse-number">18</span> 好树不能结坏果子，坏树不能结好果子。</div>
+  <textarea placeholder="请输入手写第18节内容…"></textarea>
 
-  <div class="verse"><span class="num">19</span>“凡不结好果子的树，就砍下来，丢在火里。”</div>
-  <textarea placeholder="请在此手写第19节内容..."></textarea>
+  <div class="verse"><span class="verse-number">19</span> 凡不结好果子的树，就砍下来丢在火里。</div>
+  <textarea placeholder="请输入手写第19节内容…"></textarea>
 
-  <div class="verse"><span class="num">20</span>“所以，凭着他们的果子，就可以认出他们来。”</div>
-  <textarea placeholder="请在此手写第20节内容..."></textarea>
+  <div class="verse"><span class="verse-number">20</span> 所以，凭着他们的果子，就可以认出他们来。</div>
+  <textarea placeholder="请输入手写第20节内容…"></textarea>
 
-  <div class="verse"><span class="num">21</span>“凡称呼我‘主啊，主啊’的人，不能都进天国；惟独遵行我天父旨意的人才能进去。”</div>
-  <textarea placeholder="请在此手写第21节内容..."></textarea>
+  <div class="verse"><span class="verse-number">21</span> 凡称呼我“主啊，主啊”的人不能都进天国；惟独遵行我天父旨意的人才能进去。</div>
+  <textarea placeholder="请输入手写第21节内容…"></textarea>
 
-  <div class="verse"><span class="num">22</span>“当那日必有许多人对我说：‘主啊，主啊，我们不是奉你的名传道、奉你的名赶鬼、奉你的名行许多异能吗？’</div>
-  <textarea placeholder="请在此手写第22节内容..."></textarea>
+  <div class="verse"><span class="verse-number">22</span> 当那日，必有许多人对我说：“主啊，主啊，我们不是奉你的名传道，奉你的名赶鬼，奉你的名行许多异能吗？”</div>
+  <textarea placeholder="请输入手写第22节内容…"></textarea>
 
-  <div class="verse"><span class="num">23</span>“我就明明地告诉他们说：‘我从来不认识你们，你们这些作恶的人，离开我去吧！’”</div>
-  <textarea placeholder="请在此手写第23节内容..."></textarea>
+  <div class="verse"><span class="verse-number">23</span> 我就明明地告诉他们说：“我从来不认识你们，你们这些作恶的人，离开我去吧！”</div>
+  <textarea placeholder="请输入手写第23节内容…"></textarea>
 
-  <div class="verse"><span class="num">24</span>“所以，凡听见我这话就去行的，好比一个聪明人，把房子盖在磐石上。”</div>
-  <textarea placeholder="请在此手写第24节内容..."></textarea>
+  <div class="verse"><span class="verse-number">24</span> 所以，凡听见我这话就去行的，好比一个聪明人，把房子盖在磐石上。</div>
+  <textarea placeholder="请输入手写第24节内容…"></textarea>
 
-  <div class="verse"><span class="num">25</span>“雨淋，水冲，风吹，撞着那房子，房子总不倒塌，因为根基立在磐石上。”</div>
-  <textarea placeholder="请在此手写第25节内容..."></textarea>
+  <div class="verse"><span class="verse-number">25</span> 雨淋、水冲、风吹，撞着那房子，房子总不倒塌，因为根基立在磐石上。</div>
+  <textarea placeholder="请输入手写第25节内容…"></textarea>
 
-  <div class="verse"><span class="num">26</span>“凡听见我这话不去行的，好比一个无知的人，把房子盖在沙土上。”</div>
-  <textarea placeholder="请在此手写第26节内容..."></textarea>
+  <div class="verse"><span class="verse-number">26</span> 凡听见我这话不去行的，好比一个无知的人，把房子盖在沙土上。</div>
+  <textarea placeholder="请输入手写第26节内容…"></textarea>
 
-  <div class="verse"><span class="num">27</span>“雨淋，水冲，风吹，撞着那房子，房子就倒塌了，并且倒塌得很大。”</div>
-  <textarea placeholder="请在此手写第27节内容..."></textarea>
+  <div class="verse"><span class="verse-number">27</span> 雨淋、水冲、风吹，撞着那房子，房子就倒塌了，并且倒塌得很大。”</div>
+  <textarea placeholder="请输入手写第27节内容…"></textarea>
 
-  <div class="verse"><span class="num">28</span>耶稣讲完了这些话，众人都希奇他的教训，</div>
-  <textarea placeholder="请在此手写第28节内容..."></textarea>
+  <div class="verse"><span class="verse-number">28</span> 耶稣讲完了这些话，众人都希奇他的教训；</div>
+  <textarea placeholder="请输入手写第28节内容…"></textarea>
 
-  <div class="verse"><span class="num">29</span>因为他教训他们，正像有权柄的人，不像他们的文士。</div>
-  <textarea placeholder="请在此手写第29节内容..."></textarea>
+  <div class="verse"><span class="verse-number">29</span> 因为他教训他们，正像有权柄的人，不像他们的文士。</div>
+  <textarea placeholder="请输入手写第29节内容…"></textarea>
+</body>
+</html>
 
-  <button class="mic-btn" onclick="startDictation()">🎤</button>
+  <button class="mic-button" onclick="startDictation()">🎤</button>
 
   <script>
     function startDictation() {
@@ -174,22 +184,20 @@
         const recognition = new webkitSpeechRecognition();
         recognition.continuous = false;
         recognition.interimResults = false;
-        recognition.lang = 'zh-CN';
+        recognition.lang = "zh-CN";
         recognition.start();
-
         recognition.onresult = function (e) {
           const active = document.activeElement;
-          if (active && active.tagName === 'TEXTAREA') {
+          if (active && active.tagName === "TEXTAREA") {
             active.value += e.results[0][0].transcript;
           }
           recognition.stop();
         };
-
-        recognition.onerror = function () {
+        recognition.onerror = function (e) {
           recognition.stop();
         };
       } else {
-        alert('此浏览器不支持语音识别。');
+        alert("当前浏览器不支持语音识别。");
       }
     }
   </script>
