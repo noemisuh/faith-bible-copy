@@ -83,8 +83,8 @@
   <h1>马太福音&ensp;第4章</h1>
 
   <div class="nav">
-    <a href="matthew003.html">←</a>
-    <a href="matthew005.html">→</a>
+    <a href="matthew003-copy.html">←</a>
+    <a href="matthew005-copy.html">→</a>
   </div>
 
   <div class="verse"><span class="verse-number">1</span> 当时，耶稣被圣灵引到旷野，受魔鬼的试探。</div>
@@ -160,35 +160,4 @@
   <textarea placeholder="请输入手写第24节内容…"></textarea>
 
   <div class="verse"><span class="verse-number">25</span> 当下，有许多人从加利利、低加波利、耶路撒冷、犹太，和约旦河外来跟着他。</div>
-  <textarea placeholder="请输入手写第25节内容…"></textarea>
-
-</body>
-</html>
-
-  <button class="mic-button" onclick="startDictation()">🎤</button>
-
-  <script>
-    function startDictation() {
-      if (window.hasOwnProperty('webkitSpeechRecognition')) {
-        const recognition = new webkitSpeechRecognition();
-        recognition.continuous = false;
-        recognition.interimResults = false;
-        recognition.lang = "zh-CN";
-        recognition.start();
-        recognition.onresult = function (e) {
-          const active = document.activeElement;
-          if (active && active.tagName === "TEXTAREA") {
-            active.value += e.results[0][0].transcript;
-          }
-          recognition.stop();
-        };
-        recognition.onerror = function (e) {
-          recognition.stop();
-        };
-      } else {
-        alert("当前浏览器不支持语音识别。");
-      }
-    }
-  </script>
-</body>
-</html>
+ 
