@@ -1,86 +1,223 @@
-from zipfile import ZipFile
-import os
-
-# 디렉토리 생성
-output_dir = "/mnt/data/matthew_mateo_006"
-os.makedirs(output_dir, exist_ok=True)
-
-# HTML 내용 생성 (간단 예시, 실제 말씀 내용은 더 길게 채울 수 있음)
-chinese_html = """
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <title>马太福音 第6章</title>
-    <style>
-        body {{ max-width: 800px; margin: auto; padding: 20px; font-family: sans-serif; }}
-        .verse {{ margin-bottom: 10px; }}
-        textarea {{ width: 100%; height: 50px; margin-bottom: 20px; }}
-        .nav {{ text-align: center; margin: 20px 0; }}
-        .nav a {{ margin: 0 20px; text-decoration: none; font-weight: bold; }}
-    </style>
-</head>
-<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
-    <h1>📖 马太福音 第6章</h1>
-    <div class="nav">
-        <a href="matthew005-copy.html">←</a>
-        <a href="matthew007-copy.html">→</a>
-    </div>
-    <div class="verse">1 你们要小心，不可将善事行在人的面前，故意叫他们看见；若是这样，就不能得你们天父的赏赐了。</div>
-    <textarea placeholder="请在此抄写..."></textarea>
-    <div class="verse">2 所以你施舍的时候，不可在你前面吹号，像那假冒为善的人...</div>
-    <textarea placeholder="请在此抄写..."></textarea>
-    <div class="verse">3 你施舍的时候，不要叫左手知道右手所做的...</div>
-    <textarea placeholder="请在此抄写..."></textarea>
-</body>
-</html>
-"""
-
-spanish_html = """
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Mateo Capítulo 6</title>
-    <style>
-        body {{ max-width: 800px; margin: auto; padding: 20px; font-family: sans-serif; }}
-        .verse {{ margin-bottom: 10px; }}
-        textarea {{ width: 100%; height: 50px; margin-bottom: 20px; }}
-        .nav {{ text-align: center; margin: 20px 0; }}
-        .nav a {{ margin: 0 20px; text-decoration: none; font-weight: bold; }}
-    </style>
+  <meta charset="UTF-8" />
+  <title>Mateo 6</title>
+  <style>
+    body {
+      font-family: "Noto Sans", sans-serif;
+      margin: 40px 10%;
+      line-height: 1.8;
+      user-select: none;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .verse {
+      margin: 10px 0;
+    }
+    .verse-number {
+      font-weight: bold;
+      margin-right: 6px;
+    }
+    textarea {
+      width: 100%;
+      height: 45px;
+      font-size: 16px;
+      margin-top: 4px;
+      padding: 8px;
+      resize: vertical;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0 30px;
+    }
+    .nav a {
+      font-size: 10px;
+      text-decoration: none;
+      background-color: #005bbb;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .top-bar input {
+      font-size: 16px;
+      padding: 6px;
+      width: 250px;
+    }
+    .no-copy {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .mic-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
-    <h1>📖 Mateo Capítulo 6</h1>
-    <div class="nav">
-        <a href="mateo005-copy.html">←</a>
-        <a href="mateo007-copy.html">→</a>
-    </div>
-    <div class="verse">1 »Cuídense de no hacer sus obras de justicia delante de la gente para ser vistos por ellos. Si lo hacen, no recibirán recompensa de su Padre que está en el cielo.</div>
-    <textarea placeholder="Escribe aquí..."></textarea>
-    <div class="verse">2 »Por eso, cuando des a los necesitados, no lo anuncies al son de trompeta...</div>
-    <textarea placeholder="Escribe aquí..."></textarea>
-    <div class="verse">3 Más bien, cuando des a los necesitados, que no se entere tu mano izquierda de lo que hace la derecha...</div>
-    <textarea placeholder="Escribe aquí..."></textarea>
+<body class="no-copy">
+  <div class="top-bar">
+    <div>📖 Índice bíblico | Mateo</div>
+    <input type="text" placeholder="Buscar versículo o palabra...">
+  </div>
+
+  <h1>Mateo&nbsp;&nbsp;Capítulo&nbsp;6</h1>
+
+  <div class="nav">
+    <a href="mateo005-copy.html">←</a>
+    <a href="mateo007-copy.html">→</a>
+  </div>
+
+  <div class="verse"><span class="verse-number">1</span> »Cuídense de no hacer sus obras de justicia delante de la gente para ser vistos por ellos. Si lo hacen, no tendrán recompensa de su Padre que está en el cielo.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">2</span> »Por eso, cuando des a los necesitados, no lo anuncies al son de trompeta, como lo hacen los hipócritas en las sinagogas y en las calles para ser honrados por los demás. Les aseguro que ya han obtenido toda su recompensa.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">3</span> Más bien, cuando des a los necesitados, que no se entere tu mano izquierda de lo que hace la derecha,</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">4</span> para que tu limosna sea en secreto. Así tu Padre, que ve lo que se hace en secreto, te recompensará.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">5</span> »Cuando oren, no sean como los hipócritas, porque a ellos les encanta orar de pie en las sinagogas y en las esquinas de las plazas para que la gente los vea. Les aseguro que ya han obtenido toda su recompensa.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">6</span> Pero tú, cuando te pongas a orar, entra en tu cuarto, cierra la puerta y ora a tu Padre, que está en lo secreto. Así tu Padre, que ve lo que se hace en secreto, te recompensará.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">7</span> Y al orar, no hablen solo por hablar, como lo hacen los gentiles, porque ellos se imaginan que serán escuchados por sus muchas palabras.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">8</span> No sean como ellos, porque su Padre sabe lo que ustedes necesitan antes de que se lo pidan.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">9</span> »Ustedes deben orar así: "Padre nuestro que estás en el cielo, santificado sea tu nombre,</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">10</span> venga tu reino, hágase tu voluntad en la tierra como en el cielo.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">11</span> Danos hoy nuestro pan cotidiano.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">12</span> Perdónanos nuestras deudas, como también nosotros hemos perdonado a nuestros deudores.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">13</span> Y no nos dejes caer en tentación, sino líbranos del maligno.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">14</span> »Porque si perdonan a otros sus ofensas, también los perdonará a ustedes su Padre celestial.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">15</span> Pero si no perdonan a otros sus ofensas, tampoco su Padre les perdonará a ustedes las suyas.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">16</span> »Cuando ayunen, no pongan cara triste como los hipócritas, que demudan su rostro para mostrar a los demás que están ayunando. Les aseguro que ya han obtenido toda su recompensa.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">17</span> Pero tú, cuando ayunes, perfúmate la cabeza y lávate la cara</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">18</span> para que no sea evidente ante los demás que estás ayunando, sino solo ante tu Padre, que está en lo secreto. Y tu Padre, que ve lo que se hace en secreto, te recompensará.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">19</span> »No acumulen para sí tesoros en la tierra, donde la polilla y el óxido destruyen, y donde los ladrones se meten a robar.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">20</span> Más bien, acumulen para sí tesoros en el cielo, donde ni la polilla ni el óxido carcomen, ni los ladrones se meten a robar.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">21</span> Porque donde esté tu tesoro, allí estará también tu corazón.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">22</span> »El ojo es la lámpara del cuerpo. Por tanto, si tu ojo es bueno, todo tu cuerpo estará lleno de luz.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">23</span> Pero si tu ojo es malo, todo tu cuerpo estará en oscuridad. Por tanto, si la luz que hay en ti es oscuridad, ¡qué densa será esa oscuridad!</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">24</span> »Nadie puede servir a dos señores, pues menospreciará a uno y amará al otro, o querrá mucho a uno y despreciará al otro. No se puede servir a la vez a Dios y a las riquezas.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">25</span> »Por eso les digo: No se preocupen por su vida, qué comerán o beberán; ni por su cuerpo, cómo se vestirán. ¿No tiene la vida más valor que la comida, y el cuerpo más que la ropa?</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">26</span> Fíjense en las aves del cielo: no siembran ni cosechan ni almacenan en graneros; sin embargo, el Padre celestial las alimenta. ¿No valen ustedes mucho más que ellas?</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">27</span> ¿Quién de ustedes, por mucho que se preocupe, puede añadir una sola hora al curso de su vida?</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">28</span> »¿Y por qué se preocupan por la ropa? Observen cómo crecen los lirios del campo. No trabajan ni hilan;</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">29</span> sin embargo, les digo que ni siquiera Salomón, con todo su esplendor, se vestía como uno de ellos.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">30</span> Si así viste Dios a la hierba que hoy está en el campo y mañana es arrojada al horno, ¿no hará mucho más por ustedes, gente de poca fe?</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">31</span> Así que no se preocupen diciendo: “¿Qué comeremos?” o “¿Qué beberemos?” o “¿Con qué nos vestiremos?”</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">32</span> Porque los paganos andan tras todas estas cosas, y el Padre celestial sabe que ustedes las necesitan.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">33</span> Más bien, busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">34</span> Por lo tanto, no se angustien por el mañana, el cual tendrá sus propios afanes. Cada día tiene ya sus problemas.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 </body>
 </html>
-"""
+ 
+ <button class="mic-button" onclick="startDictation()">🎤</button>
 
-# 파일 경로
-chinese_path = os.path.join(output_dir, "matthew006-copy.html")
-spanish_path = os.path.join(output_dir, "mateo006-copy.html")
+<script>
+  function startDictation() {
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+      const recognition = new webkitSpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = document.documentElement.lang === "zh" || document.documentElement.lang === "zh-CN" ? "zh-CN" :
+                         document.documentElement.lang === "es" ? "es-ES" :
+                         "en-US"; // 기본값_
+      recognition.start();
+      recognition.onresult = function (e) {
+        const active = document.activeElement;
+        if (active && active.tagName === "TEXTAREA") {
+          active.value += e.results[0][0].transcript;
+        }
+        recognition.stop();
+      };
+      recognition.onerror = function (e) {
+        recognition.stop();
+      };
+    } else {
+      alert("현재 브라우저는 음성 인식을 지원하지 않습니다.");
+    }
+  }
+</script>
 
-# 파일 저장
-with open(chinese_path, "w", encoding="utf-8") as f:
-    f.write(chinese_html)
-
-with open(spanish_path, "w", encoding="utf-8") as f:
-    f.write(spanish_html)
-
-# 압축 파일 생성
-zip_path = "/mnt/data/matthew_mateo_006.zip"
-with ZipFile(zip_path, "w") as zipf:
-    zipf.write(chinese_path, arcname="matthew006-copy.html")
-    zipf.write(spanish_path, arcname="mateo006-copy.html")
-
-zip_path
+</body>
+</html>

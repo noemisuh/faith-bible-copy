@@ -84,7 +84,7 @@
 
   <div class="nav">
     <a href="#">←</a>
-    <a href="mateo002.html">→</a>
+    <a href="mateo002-copy.html">→</a>
   </div>
 
   <div class="verse"><span class="verse-number">1</span>Tabla genealógica de Jesucristo, hijo de David, hijo de Abraham.
@@ -161,31 +161,36 @@
 
   <div class="verse"><span class="verse-number">25</span>Pero no tuvo relaciones conyugales con ella hasta que dio a luz un hijo, a quien le puso por nombre Jesús.
   <textarea placeholder="Escribe aquí..."></textarea></div>
+</body>
+</html>
+ 
+ <button class="mic-button" onclick="startDictation()">🎤</button>
 
-  <button class="mic-button" onclick="startDictation()">🎤</button>
-
-  <script>
-    function startDictation() {
-      if (window.hasOwnProperty('webkitSpeechRecognition')) {
-        const recognition = new webkitSpeechRecognition();
-        recognition.continuous = false;
-        recognition.interimResults = false;
-        recognition.lang = "es-ES";
-        recognition.start();
-        recognition.onresult = function (e) {
-          const active = document.activeElement;
-          if (active && active.tagName === "TEXTAREA") {
-            active.value += e.results[0][0].transcript;
-          }
-          recognition.stop();
-        };
-        recognition.onerror = function (e) {
-          recognition.stop();
-        };
-      } else {
-        alert("El navegador no admite el reconocimiento por voz.");
-      }
+<script>
+  function startDictation() {
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+      const recognition = new webkitSpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = document.documentElement.lang === "zh" || document.documentElement.lang === "zh-CN" ? "zh-CN" :
+                         document.documentElement.lang === "es" ? "es-ES" :
+                         "en-US"; // 기본값_
+      recognition.start();
+      recognition.onresult = function (e) {
+        const active = document.activeElement;
+        if (active && active.tagName === "TEXTAREA") {
+          active.value += e.results[0][0].transcript;
+        }
+        recognition.stop();
+      };
+      recognition.onerror = function (e) {
+        recognition.stop();
+      };
+    } else {
+      alert("현재 브라우저는 음성 인식을 지원하지 않습니다.");
     }
+  }
+</script>
   </script>
 </body>
 </html>

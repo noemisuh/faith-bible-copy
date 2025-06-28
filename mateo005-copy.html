@@ -2,110 +2,280 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mateo 5</title>
   <style>
     body {
-      font-family: sans-serif;
-      line-height: 1.7;
-      background-color: #f4fcf8;
-      padding: 40px 10%;
+      font-family: "Noto Sans", sans-serif;
+      margin: 40px 10%;
+      line-height: 1.8;
+      user-select: none;
     }
-    h2 {
+    h1 {
       text-align: center;
-      font-size: 28px;
       margin-bottom: 10px;
     }
-    .nav-arrows {
-      text-align: center;
-      margin-bottom: 30px;
-    }
     .verse {
-      margin-bottom: 8px;
+      margin: 10px 0;
     }
-    .verse span {
+    .verse-number {
       font-weight: bold;
-      margin-right: 8px;
+      margin-right: 6px;
     }
     textarea {
       width: 100%;
-      height: 60px;
-      margin-bottom: 20px;
+      height: 45px;
+      font-size: 16px;
+      margin-top: 4px;
+      padding: 8px;
       resize: vertical;
     }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0 30px;
+    }
+    .nav a {
+      font-size: 10px;
+      text-decoration: none;
+      background-color: #005bbb;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .top-bar input {
+      font-size: 16px;
+      padding: 6px;
+      width: 250px;
+    }
+    .no-copy {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .mic-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+    }
   </style>
+
+<style>
+  .mic-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  }
+</style>
+
+
 </head>
-<body>
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Bible_icon.png" alt="Bible Icon" width="40" />
-  <h2>Mateo 5</h2>
-
-  <div class="nav-arrows">
-    <a href="mateo004-copy.html">⬅</a>
-    <a href="mateo006-copy.html">➡</a>
+<body class="no-copy">
+  <div class="top-bar">
+    <div>📖 Índice bíblico | Mateo</div>
+    <input type="text" placeholder="Buscar versículo o palabra...">
   </div>
 
-  <div class="verse"><span>1</span>Cuando vio las multitudes, subió a la ladera de una montaña y se sentó. Sus discípulos se le acercaron,</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <h1>Mateo&nbsp;&nbsp;Capítulo&nbsp;5</h1>
 
-  <div class="verse"><span>2</span>y tomando él la palabra, comenzó a enseñarles diciendo:</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="nav">
+    <a href="mateo004-copy.html">←</a>
+    <a href="mateo006-copy.html">→</a>
+  </div>
 
-  <div class="verse"><span>3</span>Dichosos los pobres en espíritu, porque el reino de los cielos les pertenece.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">1</span>Cuando vio las multitudes, subió al monte y se sentó. Sus discípulos se le acercaron,</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>4</span>Dichosos los que lloran, porque serán consolados.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">2</span>y tomando la palabra, les enseñaba diciendo:</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>5</span>Dichosos los humildes, porque recibirán la tierra como herencia.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">3</span>«Dichosos los pobres en espíritu, porque el reino de los cielos les pertenece.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>6</span>Dichosos los que tienen hambre y sed de justicia, porque serán saciados.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">4</span>Dichosos los que lloran, porque serán consolados.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>7</span>Dichosos los compasivos, porque serán tratados con compasión.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">5</span>Dichosos los humildes, porque recibirán la tierra como herencia.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>8</span>Dichosos los de corazón limpio, porque ellos verán a Dios.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">6</span>Dichosos los que tienen hambre y sed de justicia, porque serán saciados.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>9</span>Dichosos los que trabajan por la paz, porque serán llamados hijos de Dios.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">7</span>Dichosos los compasivos, porque serán tratados con compasión.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>10</span>Dichosos los perseguidos por causa de la justicia, porque el reino de los cielos les pertenece.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">8</span>Dichosos los de corazón limpio, porque ellos verán a Dios.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>11</span>Dichosos serán ustedes cuando por mi causa la gente los insulte, los persiga y levante contra ustedes toda clase de calumnias.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">9</span>Dichosos los que trabajan por la paz, porque serán llamados hijos de Dios.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>12</span>Alégrense y llénense de júbilo, porque les espera una gran recompensa en el cielo. Así también persiguieron a los profetas que los precedieron a ustedes.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">10</span>Dichosos los perseguidos por causa de la justicia, porque el reino de los cielos les pertenece.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>13</span>Ustedes son la sal de la tierra. Pero si la sal se vuelve insípida, ¿cómo recobrará su sabor? Ya no sirve para nada, sino para ser arrojada y pisoteada por los hombres.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">11</span>Dichosos serán ustedes cuando por mi causa la gente los insulte, los persiga y levante contra ustedes toda clase de calumnias.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>14</span>Ustedes son la luz del mundo. Una ciudad en lo alto de una colina no puede esconderse.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">12</span>Alégrense y llénense de júbilo, porque les espera una gran recompensa en el cielo. Así también persiguieron a los profetas que los precedieron a ustedes.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>15</span>Ni se enciende una lámpara para cubrirla con un cajón. Por el contrario, se pone en la repisa para que alumbre a todos los que están en la casa.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">13</span>Ustedes son la sal de la tierra. Pero si la sal se vuelve insípida, ¿cómo recobrará su sabor? Ya no sirve para nada, sino para ser tirada y pisoteada por los hombres.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>16</span>Hagan brillar su luz delante de todos, para que ellos vean las buenas obras de ustedes y alaben al Padre de ustedes que está en el cielo.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">14</span>Ustedes son la luz del mundo. Una ciudad en lo alto de una colina no puede esconderse.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>17</span>No piensen que he venido a abolir la Ley o los Profetas. No he venido a abolirlos, sino a darles cumplimiento.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">15</span>Ni se enciende una lámpara para cubrirla con un cajón. Por el contrario, se pone en la repisa para que alumbre a todos los que están en la casa.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>18</span>Les aseguro que mientras existan el cielo y la tierra, ni una letra ni una tilde de la Ley desaparecerán hasta que todo se haya cumplido.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">16</span>Hagan brillar su luz delante de todos, para que ellos vean las buenas obras de ustedes y alaben a su Padre que está en el cielo.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>19</span>Todo el que quebrante uno solo de estos mandamientos, por pequeños que sean, y enseñe a otros a hacer lo mismo, será considerado el más pequeño en el reino de los cielos. En cambio, el que los practique y enseñe será considerado grande en el reino de los cielos.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">17</span>»No piensen que he venido a abolir la Ley o los Profetas. No he venido a abolirlos, sino a darles cumplimiento.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <div class="verse"><span>20</span>Porque les digo a ustedes que no entrarán en el reino de los cielos a menos que su justicia supere a la de los fariseos y a la de los maestros de la ley.</div>
-  <textarea placeholder="Escriba aquí…"></textarea>
+  <div class="verse"><span class="verse-number">18</span>Les aseguro que mientras existan el cielo y la tierra, ni una letra ni una tilde de la ley desaparecerán hasta que todo se haya cumplido.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
-  <!-- 계속해서 마태복음 5장 전체 채워야 할 경우, 이어서 추가 가능 -->
+  <div class="verse"><span class="verse-number">19</span>Todo el que infrinja uno solo de estos mandamientos, por pequeño que sea, y enseñe a otros a hacer lo mismo, será considerado el más pequeño en el reino de los cielos; pero el que los practique y enseñe será considerado grande en el reino de los cielos.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
 
+  <div class="verse"><span class="verse-number">20</span>Porque les digo que si su justicia no supera a la de los fariseos y maestros de la ley, no entrarán en el reino de los cielos.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">21</span>»Ustedes han oído que se dijo a sus antepasados: “No mates, y todo el que mate quedará sujeto al juicio del tribunal.”</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">22</span>Pero yo les digo que todo el que se enoje con su hermano quedará sujeto al juicio del tribunal. También cualquiera que insulte a su hermano quedará sujeto al juicio del consejo. Y cualquiera que lo maldiga quedará sujeto al fuego del infierno.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">23</span>»Por tanto, si estás presentando tu ofrenda en el altar y allí recuerdas que tu hermano tiene algo contra ti,</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">24</span>deja tu ofrenda allí delante del altar. Ve primero y reconcíliate con tu hermano; luego vuelve y presenta tu ofrenda.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">25</span>»Si tu adversario te lleva ante el juez, reconcíliate con él de inmediato, mientras vas con él por el camino. No sea que te entregue al juez, y el juez al guardia, y te echen en la cárcel.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">26</span>Te aseguro que no saldrás de allí hasta que pagues el último centavo.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">27</span>»Ustedes han oído que se dijo: “No cometas adulterio.”</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">28</span>Pero yo les digo que cualquiera que mira a una mujer y la codicia ya ha cometido adulterio con ella en el corazón.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">29</span>Por tanto, si tu ojo derecho te hace pecar, sácatelo y tíralo. Más te vale perder una sola parte de tu cuerpo que que todo él sea arrojado al infierno.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">30</span>Y si tu mano derecha te hace pecar, córtatela y tírala. Más te vale perder una sola parte de tu cuerpo que que todo él vaya al infierno.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">31</span>»Se dijo: “El que repudie a su esposa debe darle un certificado de divorcio.”</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">32</span>Pero yo les digo que, excepto en caso de infidelidad conyugal, todo el que se divorcia de su esposa la induce al adulterio; y el que se casa con la divorciada comete adulterio.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">33</span>»También han oído que se dijo a sus antepasados: “No faltes a tu juramento, sino cumple con tus promesas al Señor.”</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">34</span>Pero yo les digo: No juren de ningún modo: ni por el cielo, porque es el trono de Dios;</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">35</span>ni por la tierra, porque es el estrado de sus pies; ni por Jerusalén, porque es la ciudad del gran Rey.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">36</span>Tampoco jures por tu cabeza, porque no puedes hacer que ni uno solo de tus cabellos se vuelva blanco o negro.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">37</span>Cuando ustedes digan “sí”, que sea realmente sí; y cuando digan “no”, que sea no. Cualquier cosa de más proviene del maligno.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">38</span>»Ustedes han oído que se dijo: “Ojo por ojo y diente por diente.”</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">39</span>Pero yo les digo: No resistan al que les haga daño. Si alguien te da una bofetada en la mejilla derecha, vuélvele también la otra.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">40</span>Si alguien te pone pleito para quitarte la camisa, déjale también la capa.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">41</span>Si alguien te obliga a llevarle la carga un kilómetro, llévasela dos.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">42</span>Al que te pida, dale; y al que quiera tomar de ti prestado, no le vuelvas la espalda.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">43</span>»Ustedes han oído que se dijo: “Ama a tu prójimo y odia a tu enemigo.”</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">44</span>Pero yo les digo: Amen a sus enemigos y oren por quienes los persiguen,</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">45</span>para que sean hijos de su Padre que está en el cielo. Él hace que salga el sol sobre malos y buenos, y que llueva sobre justos e injustos.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">46</span>Si ustedes aman solamente a quienes los aman, ¿qué recompensa recibirán? ¿Acaso no hacen eso hasta los recaudadores de impuestos?</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">47</span>Y si saludan solo a sus hermanos, ¿qué demás hacen ustedes? ¿Acaso no hacen eso hasta los gentiles?</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+
+  <div class="verse"><span class="verse-number">48</span>Por tanto, sean perfectos, así como su Padre celestial es perfecto.</div>
+  <textarea placeholder="Escribe aquí..."></textarea>
+</body>
+</html>
+  <button class="mic-button">🎤</button>
+
+  <script>
+    const micButton = document.querySelector('.mic-button');
+    const textareas = document.querySelectorAll('textarea');
+    let currentIndex = 0;
+
+    micButton.addEventListener('click', () => {
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.lang = 'es-ES'; // 스페인어 설정
+
+      recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        if (currentIndex < textareas.length) {
+          textareas[currentIndex].value += transcript;
+          currentIndex++;
+        }
+      };
+
+      recognition.onerror = function(event) {
+        alert('Error de reconocimiento: ' + event.error);
+      };
+
+      recognition.start();
+    });
+  </script>
 </body>
 </html>
