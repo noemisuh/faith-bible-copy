@@ -137,6 +137,8 @@
 <textarea placeholder="请输入手写第24节内容..."></textarea></div>
 <div class="verse"><span class="verse-number">25</span>只是没有和她同房，等她生了儿子，就给他起名叫耶稣。
 <textarea placeholder="请输入手写第25节内容..."></textarea></div>
+</body>
+</html>
 
 <button class="mic-button" onclick="startDictation()">🎤</button>
 
@@ -146,7 +148,9 @@
       const recognition = new webkitSpeechRecognition();
       recognition.continuous = false;
       recognition.interimResults = false;
-      recognition.lang = "zh-CN";
+      recognition.lang = document.documentElement.lang === "zh" || document.documentElement.lang === "zh-CN" ? "zh-CN" :
+                         document.documentElement.lang === "es" ? "es-ES" :
+                         "en-US"; // 기본값_
       recognition.start();
       recognition.onresult = function (e) {
         const active = document.activeElement;
@@ -159,7 +163,7 @@
         recognition.stop();
       };
     } else {
-      alert("当前浏览器不支持语音识别。");
+      alert("현재 브라우저는 음성 인식을 지원하지 않습니다.");
     }
   }
 </script>

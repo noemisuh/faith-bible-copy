@@ -132,77 +132,36 @@
   <div class="verse"><span class="verse-number">15</span> “有耳可听的，就应当听！”</div>
   <textarea placeholder="请输入手写第15节内容…"></textarea>
 
-  <div class="verse"><span class="verse-number">16</span> “我可用什么比这世代呢？好像孩童坐在街市上，招呼同伴，说：</div>
-  <textarea placeholder="请输入手写第16节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">17</span> ‘我们向你们吹笛，你们不跳舞；我们向你们举哀，你们不捶胸。’</div>
-  <textarea placeholder="请输入手写第17节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">18</span> “约翰来了，也不吃，也不喝，人就说他是被鬼附着的。”</div>
-  <textarea placeholder="请输入手写第18节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">19</span> “人子来了，也吃，也喝，人又说：‘看哪！是贪食好酒的人，是税吏和罪人的朋友。’但智慧之子总以智慧为是。”</div>
-  <textarea placeholder="请输入手写第19节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">20</span> 耶稣在诸城中行了许多异能，那些城的人终不悔改，就在那时候责备他们，说：</div>
-  <textarea placeholder="请输入手写第20节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">21</span> “哥拉汛哪，你有祸了！伯赛大啊，你有祸了！因为在你们中间所行的异能，若行在推罗、西顿，他们早已披麻蒙灰悔改了。”</div>
-  <textarea placeholder="请输入手写第21节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">22</span> “但我告诉你们：当审判的日子，推罗、西顿所受的，比你们还容易受呢！”</div>
-  <textarea placeholder="请输入手写第22节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">23</span> “迦百农啊，你已经升到天上（或作：你将要升到天上）吗？将来必坠落阴间！因为在你那里所行的异能，若行在所多玛，它还可以存到今日。”</div>
-  <textarea placeholder="请输入手写第23节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">24</span> “但我告诉你们：当审判的日子，所多玛所受的，比你还容易受呢！”</div>
-  <textarea placeholder="请输入手写第24节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">25</span> 那时，耶稣说：“父啊，天地的主，我感谢你，因为你将这些事向聪明通达人就藏起来，向婴孩就显出来。”</div>
-  <textarea placeholder="请输入手写第25节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">26</span> “父啊，是的，因为你的美意本是如此。”</div>
-  <textarea placeholder="请输入手写第26节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">27</span> “一切所有的，都是我父交付我的；除了父，没有人知道子；除了子和子所愿意指示的，没有人知道父。”</div>
-  <textarea placeholder="请输入手写第27节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">28</span> “凡劳苦担重担的人可以到我这里来，我就使你们得安息。”</div>
-  <textarea placeholder="请输入手写第28节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">29</span> “我心里柔和谦卑，你们当负我的轭，学我的样式；这样，你们心里就必得享安息。”</div>
-  <textarea placeholder="请输入手写第29节内容…"></textarea>
-
-  <div class="verse"><span class="verse-number">30</span> “因为我的轭是容易的，我的担子是轻省的。”</div>
-  <textarea placeholder="请输入手写第30节内容…"></textarea>
-</body>
+ fau
 </html>
 
   <button class="mic-button" onclick="startDictation()">🎤</button>
 
-  <script>
-    function startDictation() {
-      if (window.hasOwnProperty('webkitSpeechRecognition')) {
-        const recognition = new webkitSpeechRecognition();
-        recognition.continuous = false;
-        recognition.interimResults = false;
-        recognition.lang = "zh-CN";
-        recognition.start();
-        recognition.onresult = function (e) {
-          const active = document.activeElement;
-          if (active && active.tagName === "TEXTAREA") {
-            active.value += e.results[0][0].transcript;
-          }
-          recognition.stop();
-        };
-        recognition.onerror = function (e) {
-          recognition.stop();
-        };
-      } else {
-        alert("当前浏览器不支持语音识别。");
-      }
+<script>
+  function startDictation() {
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+      const recognition = new webkitSpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = document.documentElement.lang === "zh" || document.documentElement.lang === "zh-CN" ? "zh-CN" :
+                         document.documentElement.lang === "es" ? "es-ES" :
+                         "en-US"; // 기본값_
+      recognition.start();
+      recognition.onresult = function (e) {
+        const active = document.activeElement;
+        if (active && active.tagName === "TEXTAREA") {
+          active.value += e.results[0][0].transcript;
+        }
+        recognition.stop();
+      };
+      recognition.onerror = function (e) {
+        recognition.stop();
+      };
+    } else {
+      alert("현재 브라우저는 음성 인식을 지원하지 않습니다.");
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>

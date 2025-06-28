@@ -160,4 +160,36 @@
   <textarea placeholder="请输入手写第24节内容…"></textarea>
 
   <div class="verse"><span class="verse-number">25</span> 当下，有许多人从加利利、低加波利、耶路撒冷、犹太，和约旦河外来跟着他。</div>
- 
+ </body>
+</html>
+
+  <button class="mic-button" onclick="startDictation()">🎤</button>
+
+<script>
+  function startDictation() {
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+      const recognition = new webkitSpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = document.documentElement.lang === "zh" || document.documentElement.lang === "zh-CN" ? "zh-CN" :
+                         document.documentElement.lang === "es" ? "es-ES" :
+                         "en-US"; // 기본값_
+      recognition.start();
+      recognition.onresult = function (e) {
+        const active = document.activeElement;
+        if (active && active.tagName === "TEXTAREA") {
+          active.value += e.results[0][0].transcript;
+        }
+        recognition.stop();
+      };
+      recognition.onerror = function (e) {
+        recognition.stop();
+      };
+    } else {
+      alert("현재 브라우저는 음성 인식을 지원하지 않습니다.");
+    }
+  }
+</script>
+
+</body>
+</html>
