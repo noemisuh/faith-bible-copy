@@ -73,25 +73,6 @@
       cursor: pointer;
     }
   </style>
-
-<style>
-  .mic-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
-  }
-</style>
-
-
 </head>
 <body class="no-copy">
   <div class="top-bar">
@@ -249,33 +230,46 @@
 
   <div class="verse"><span class="verse-number">48</span>Por tanto, sean perfectos, así como su Padre celestial es perfecto.</div>
   <textarea placeholder="Escribe aquí..."></textarea>
-</body>
-</html>
-  <button class="mic-button">🎤</button>
+
+ <div class="verse"><span class="verse-number">48</span>Por tanto, sean perfectos, así como su Padre celestial es perfecto.<textarea placeholder="Escribe aquí..."></textarea></div>
+
+  <button class="mic-button" onclick="startDictation()">🎤</button>
 
   <script>
-    const micButton = document.querySelector('.mic-button');
-    const textareas = document.querySelectorAll('textarea');
-    let currentIndex = 0;
+    function startDictation() {
+      if (window.hasOwnProperty('webkitSpeechRecognition')) {
+        const recognition = new webkitSpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
 
-    micButton.addEventListener('click', () => {
-      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-      recognition.lang = 'es-ES'; // 스페인어 설정
+        recognition.lang = document.documentElement.lang === "zh" || document.documentElement.lang === "zh-CN" ? "zh-CN" :
+                           document.documentElement.lang === "es" ? "es-ES" :
+                           "en-US"; // 기본값
 
-      recognition.onresult = function(event) {
-        const transcript = event.results[0][0].transcript;
-        if (currentIndex < textareas.length) {
-          textareas[currentIndex].value += transcript;
-          currentIndex++;
-        }
-      };
+        recognition.start();
 
-      recognition.onerror = function(event) {
-        alert('Error de reconocimiento: ' + event.error);
-      };
+        recognition.onresult = function (e) {
+          const active = document.activeElement;
+          if (active && active.tagName === "TEXTAREA") {
+            active.value += e.results[0][0].transcript;
+          }
+          recognition.stop();
+        };
 
-      recognition.start();
-    });
+        recognition.onerror = function (e) {
+          if (e.error === "not-allowed") {
+            alert("⚠️ El uso del micrófono está bloqueado.\nPermita el acceso desde el candado de la barra de direcciones.");
+          } else if (e.error === "service-not-allowed") {
+            alert("⚠️ El reconocimiento de voz no está habilitado.\nVerifique la configuración del navegador.");
+          } else {
+            alert("Error de reconocimiento: " + e.error);
+          }
+          recognition.stop();
+        };
+      } else {
+        alert("⚠️ Este navegador no admite reconocimiento de voz.");
+      }
+    }
   </script>
 </body>
 </html>
