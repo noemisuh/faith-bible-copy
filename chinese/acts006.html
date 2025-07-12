@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>使徒行传 6章</title>
+  <style>
+    body {
+      font-family: "Noto Sans", sans-serif;
+      margin: 40px 10%;
+      line-height: 1.8;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .verse {
+      margin: 10px 0;
+    }
+    .verse-number {
+      font-weight: bold;
+      margin-right: 6px;
+    }
+    textarea {
+      width: 100%;
+      height: 45px;
+      font-size: 16px;
+      margin-top: 4px;
+      padding: 8px;
+      resize: vertical;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0 30px;
+    }
+    .nav a {
+      font-size: 10px;
+      text-decoration: none;
+      background-color: #005bbb;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .top-bar input {
+      font-size: 16px;
+      padding: 6px;
+      width: 250px;
+    }
+    .mic-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div>📖 圣经目录 | 使徒行传</div>
+    <input type="text" placeholder="搜索经文或关键词...">
+  </div>
+
+  <h1>使徒行传&nbsp;&nbsp;第6章</h1>
+
+  <div class="nav">
+    <a href="acts005.html">←</a>
+    <a href="acts007.html">→</a>
+  </div>
+
+<div class="verse">
+  <span class="verse-number">1</span>&nbsp;&nbsp;那时，门徒增多，有说希利尼话的犹太人向希伯来人发怨言，因为在天天的供给上忽略了他们的寡妇，
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">2</span>&nbsp;&nbsp;十二使徒叫众门徒来，对他们说：“我们撇下神的道去管理饭食，原是不合宜的。
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">3</span>&nbsp;&nbsp;所以弟兄们，你们中间当选出七个有好名声、被圣灵充满、智慧充足的人，我们就派他们管理这事。
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">4</span>&nbsp;&nbsp;但我们要专心以祈祷传道为事。”
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">5</span>&nbsp;&nbsp;大众都喜悦这话，就拣选了司提反（乃是满有信心和圣灵的人），又拣选腓利、伯罗哥罗、尼迦挪、提门、巴米拿，并进犹太教的安提阿人尼哥拉，
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">6</span>&nbsp;&nbsp;叫他们站在使徒面前，使徒祷告了，就按手在他们头上。
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">7</span>&nbsp;&nbsp;神的道兴旺起来，在耶路撒冷门徒数目加增得甚多，也有许多祭司信从了这道。
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">8</span>&nbsp;&nbsp;司提反满得恩惠能力，在民间行了大奇事和神迹。
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">9</span>&nbsp;&nbsp;当时有称利百地拿会堂的人，并古利奈、亚历山大、基利家、亚西亚各处会堂的人，都起来和司提反辩论。
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">10</span>&nbsp;&nbsp;司提反是以智慧和圣灵说话，众人敌挡不住，
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">11</span>&nbsp;&nbsp;就买出人来说：“我们听见他说谤讟摩西和神的话。”
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">12</span>&nbsp;&nbsp;他们又耸动了百姓、长老并文士，就忽然来捉拿他，把他带到公会去，
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">13</span>&nbsp;&nbsp;设下假见证说：“这个人说话不住地糟践圣所和律法，
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">14</span>&nbsp;&nbsp;我们曾听见他说：‘这拿撒勒人耶稣要毁坏此地，也要改变摩西所交给我们的规条。’”
+  <textarea></textarea>
+</div>
+<div class="verse">
+  <span class="verse-number">15</span>&nbsp;&nbsp;在公会里坐着的人都定睛看他，见他的面貌好像天使的面貌。
+  <textarea></textarea>
+</div>
+
+  <button class="mic-button" title="🎤 말씀을 소리 내어 읽으세요">🎤</button>
+
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+  const shown = localStorage.getItem("micPopupShown");
+  if (!shown) {
+    alert("📌 마이크 기능 안내:\n말씀을 소리 내어 읽으면 자동으로 필사칸에 입력됩니다.\n모바일에서는 마이크 허용을 눌러주세요.");
+    localStorage.setItem("micPopupShown", "true");
+  }
+});
+
+let recognition;
+const micButton = document.querySelector(".mic-button");
+
+micButton.addEventListener("click", () => {
+  if (!('webkitSpeechRecognition' in window)) {
+    alert("⚠️ 현재 브라우저는 음성 인식을 지원하지 않습니다.");
+    return;
+  }
+
+  if (!recognition) {
+    recognition = new webkitSpeechRecognition();
+
+    const userLang = document.documentElement.lang || "zh";
+    const langMap = {
+      "zh": "zh-CN",
+      "zh-cn": "zh-CN",
+      "zh-hk": "zh-HK",
+      "zh-tw": "zh-TW",
+      "ko": "ko-KR",
+      "en": "en-US"
+    };
+    recognition.lang = langMap[userLang.toLowerCase()] || "zh-CN";
+
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    recognition.onresult = (event) => {
+      const text = event.results[0][0].transcript;
+      const activeTextarea = document.activeElement;
+      if (activeTextarea && activeTextarea.tagName === "TEXTAREA") {
+        activeTextarea.value += text;
+      }
+    };
+
+    recognition.onerror = (event) => {
+      alert("❗ 오류 발생: " + event.error);
+    };
+  }
+
+  recognition.start();
+});
+
+ // 붙여넣기만 방지하고 복사는 허용
+  document.querySelectorAll("textarea").forEach(function (textarea) {
+    textarea.addEventListener("paste", function (event) {
+      event.preventDefault();
+      alert("✋ 붙여넣기는 금지되어 있습니다. 직접 입력해 주세요.");
+    });
+  });
+</script>
+</body>
+</html>
