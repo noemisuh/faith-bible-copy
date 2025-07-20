@@ -335,56 +335,7 @@
   <button class="mic-button" title="🎤 말씀을 소리 내어 읽으세요">🎤</button>
 </div>
 
-    <!-- 기호 제거 및 자동 줄바꿈 스크립트 -->
-    <script>
-    // 기호 제거 함수 (유니코드 방식으로 수정)
-    function cleanText(text) {
-      return text.replace(/[\u201C\u201D\u3001\uFF1A\uFF1F\uFF08\uFF09]/g, "");
-    }  
-
-        // 자동 줄바꿈 함수
-        function autoLineBreak(text, line_length = 50) {
-            let lines = [];
-            let currentLine = "";
-
-            // 문장을 한 줄씩 처리하며 줄바꿈 적용
-            text.split(' ').forEach(word => {
-                // 현재 줄의 길이가 line_length를 넘으면, 줄을 나누고 새로운 줄을 시작
-                if ((currentLine + word).length > line_length) {
-                    lines.push(currentLine.trim()); // 현재 줄을 추가
-                    currentLine = word; // 새로운 줄 시작
-                } else {
-                    currentLine += " " + word; // 현재 줄에 단어 추가
-                }
-            });
-
-            // 남아있는 텍스트를 마지막 줄로 추가
-            if (currentLine) {
-                lines.push(currentLine.trim());
-            }
-
-            return lines.join('\n'); // 줄바꿈 문자로 구분하여 반환
-        }
-
-        // 기호를 제거하고, 줄바꿈 처리 후, 필사 칸에 텍스트를 채웁니다
-        window.onload = function() {
-            const verses = document.querySelectorAll(".verse-text");
-
-            verses.forEach(verseText => {
-                // 기호 제거
-                let cleanedText = cleanText(verseText.innerText);
-                
-                // 자동 줄바꿈 처리
-                cleanedText = autoLineBreak(cleanedText);  
-
-                // 기호가 제거되고, 줄바꿈된 텍스트로 업데이트
-                verseText.innerHTML = cleanedText; // innerHTML로 업데이트
-
-                const textarea = verseText.closest('.verse').querySelector("textarea");
-                textarea.value = cleanedText;  // 필사 칸에 텍스트 채우기
-            });
-        };
-
+<script>
 window.addEventListener("DOMContentLoaded", function () {
   const shown = localStorage.getItem("micPopupShown");
   if (!shown) {
@@ -442,6 +393,56 @@ micButton.addEventListener("click", () => {
       alert("✋ 붙여넣기는 금지되어 있습니다. 직접 입력해 주세요.");
     });
   });
+
+  // 기호 제거 함수 (유니코드 방식)
+    function cleanText(text) {
+        return text.replace(/[\u201C\u201D\u3001\uFF1A\uFF1F\uFF08\uFF09]/g, ""); // 유니코드로 기호 제거
+    }
+
+    // 자동 줄바꿈 함수
+    function autoLineBreak(text, line_length = 50) {
+        let lines = [];
+        let currentLine = "";
+
+        // 문장을 한 줄씩 처리하며 줄바꿈 적용
+        text.split(' ').forEach(word => {
+            // 현재 줄의 길이가 line_length를 넘으면, 줄을 나누고 새로운 줄을 시작
+            if ((currentLine + word).length > line_length) {
+                lines.push(currentLine.trim()); // 현재 줄을 추가
+                currentLine = word; // 새로운 줄 시작
+            } else {
+                currentLine += " " + word; // 현재 줄에 단어 추가
+            }
+        });
+
+        // 남아있는 텍스트를 마지막 줄로 추가
+        if (currentLine) {
+            lines.push(currentLine.trim());
+        }
+
+        return lines.join('\n'); // 줄바꿈 문자로 구분하여 반환
+    }
+
+    // 기호를 제거하고, 줄바꿈 처리 후, 필사 칸에 텍스트를 채웁니다
+    window.onload = function() {
+        const verses = document.querySelectorAll(".verse-text");
+
+        verses.forEach(verseText => {
+            // 기호 제거
+            let cleanedText = cleanText(verseText.innerText);
+            
+            // 자동 줄바꿈 처리
+            cleanedText = autoLineBreak(cleanedText);  
+
+            // 기호가 제거되고, 줄바꿈된 텍스트로 업데이트
+            verseText.innerText = cleanedText;
+
+            const textarea = verseText.closest('.verse').querySelector("textarea");
+            textarea.value = cleanedText;  // 필사 칸에 텍스트 채우기
+        });
+    };
+
+    // 기존의 다른 기능들이 계속 동작하도록 유지
 </script>
 </body>
 </html>
