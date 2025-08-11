@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>马太福音 1章 · 固定模板</title>
+  <style>
+    :root{
+      --max: 960px;
+      --edge-gap: 28px;
+      --box-radius: 12px;
+    }
+    * { box-sizing: border-box }
+    body { margin: 0; font-family: system-ui, Segoe UI, Apple SD Gothic Neo, Noto Sans CJK KR, Arial, sans-serif; color: #222; background: #fff; }
+    .top-gap { height: 56px; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--edge-gap); }
+    .topbar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #ddd; border-radius: 10px; padding: 8px 10px; background: #fff; cursor: pointer; font-size: 14px; }
+    .btn:active { transform: translateY(1px) }
+    .search { justify-self: end; }
+    .search input { width: 220px; max-width: 40vw; border: 1px solid #ddd; border-radius: 10px; padding: 8px 10px; outline: none; }
+    .title { font-size: 28px; text-align: center; margin: 12px 0 6px; }
+
+    .arrows { position: relative; height: 34px; margin-bottom: 8px; }
+    .arrow { position: absolute; top: 0; padding: 6px 10px; border: 1px solid #e5e5e5; border-radius: 999px; background: #fff; opacity: .9; cursor: pointer; }
+    .arrow.left { left: 0 }
+    .arrow.right { right: 0 }
+    .arrow:hover { background: #fafafa }
+
+    .content { max-width: var(--max); margin: 0 auto 60px; padding: 8px var(--edge-gap); }
+    .verse { margin: 14px 0; }
+    .vnum { font-weight: 700; margin-right: 8px; }
+    .field { margin-top: 6px; }
+    textarea {
+      width: 100%; min-height: 68px;
+      border: 1px solid #ddd; border-radius: var(--box-radius); padding: 10px 12px; resize: vertical;
+      line-height: 1.5; font-size: 15px; outline: none;
+    }
+
+    .mic {
+      position: fixed; right: 18px; bottom: 18px; width: 54px; height: 54px; border-radius: 999px;
+      border: 1px solid #ddd; display: flex; align-items: center; justify-content: center;
+      background: #fff; box-shadow: 0 6px 18px rgba(0,0,0,.08); cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-gap"></div>
+
+  <div class="container">
+    <div class="topbar">
+      <button class="btn" id="menuBtn">📖 圣经目录</button>
+      <div style="text-align:center; visibility:hidden;">.</div>
+      <div class="search"><input id="q" type="search" placeholder="经文搜索…" /></div>
+    </div>
+
+    <h1 class="title">马太福音 1章（固定模板）</h1>
+
+    <div class="arrows">
+      <a class="arrow left"  href="#" title="上一章">←</a>
+      <a class="arrow right" href="#" title="下一章">→</a>
+    </div>
+
+    <div class="content" id="content">
+      <div class="verse" data-v="1">
+        <span class="vnum">1</span>
+        <div class="field">
+          <textarea placeholder="请直接输入。（禁止粘贴）"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="mic" id="micBtn" title="语音输入">🎤</button>
+
+  <script>
+    document.addEventListener('paste', (e)=>{
+      if(e.target && e.target.tagName === 'TEXTAREA'){
+        e.preventDefault();
+        alert('붙여넣기는 금지됩니다. 직접 입력해 주세요.');
+      }
+    });
+
+    let recognizing = false, recog;
+    function initSpeech(){
+      const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if(!SR){ alert('이 브라우저는 음성 입력을 지원하지 않습니다.'); return null; }
+      const r = new SR(); r.lang = 'zh-CN'; r.interimResults = true; r.continuous = true;
+      r.onresult = (ev)=>{
+        const active = document.activeElement;
+        if(active && active.tagName === 'TEXTAREA'){
+          let txt = '';
+          for(let i=ev.resultIndex;i<ev.results.length;i++){ txt += ev.results[i][0].transcript; }
+          active.value = (active.value||'') + txt;
+        }
+      };
+      r.onend = ()=>{ recognizing=false; };
+      return r;
+    }
+    document.getElementById('micBtn').addEventListener('click', ()=>{
+      if(!recog) recog = initSpeech();
+      if(!recog) return;
+      if(!recognizing){ recog.start(); recognizing=true; }
+      else{ recog.stop(); recognizing=false; }
+    });
+  </script>
+</body>
+</html>
