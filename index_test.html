@@ -1,33 +1,121 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>성경 인덱스</title>
-  <style>
-    body { font-family: system-ui, Segoe UI, Apple SD Gothic Neo, Arial, sans-serif; margin: 0; }
-    .top-gap { height: 56px; }
-    .wrap { max-width: 1000px; margin: 0 auto; padding: 16px; }
-    h1 { margin: 0 0 16px; font-size: 28px; text-align: center; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
-    .card { border: 1px solid #ddd; border-radius: 10px; padding: 12px; text-decoration: none; color: #222; }
-    .card:hover { background: #fafafa; }
-    .subtitle { font-size: 12px; color: #666; margin-top: 4px; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>믿음으로 쓰는 성경 · 인덱스</title>
+<style>
+  :root{
+    --wrap: 1100px;
+    --gap: 28px;
+    --line: #e6eef7;
+    --card: #f7fbff;
+    --blue: #2f6fed;
+    --shadow: 0 8px 30px rgba(0,0,0,.07);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,Segoe UI,Apple SD Gothic Neo,Arial,sans-serif;color:#1f2937;background:#f5f7fb;}
+  header{padding:40px 16px;background:#e8f3ff;border-bottom:1px solid #ddeaff;text-align:center}
+  header h1{margin:0 0 6px;font-size:36px;letter-spacing:.5px}
+  header p{margin:0;color:#445}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:22px var(--gap);}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:0;position:relative;background:#fff;border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+  .two-col::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--line);}
+  .col{padding:28px;}
+  .left{background:#fff;}
+  .right{background:#fff;}
+  /* 왼쪽: 소개/이미지 자리 */
+  .left .placeholder{
+    border:2px dashed #c9d9ee;border-radius:14px;background:#fbfdff;
+    padding:22px;text-align:center;color:#6b7280
+  }
+  /* 오른쪽: 언어/버전 선택 */
+  .panel{max-width:430px;margin:0 auto}
+  .lang{display:block;width:100%;text-align:left;border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;font-size:16px;background:#fff;margin-top:12px;cursor:pointer}
+  .lang:hover{background:#f9fafb}
+  .lang strong{font-size:17px}
+  .vers{display:none;margin:10px 0 0 0;padding:12px;border-left:3px solid #e5efff;background:var(--card);border-radius:10px}
+  .ver-btn{display:inline-block;margin:6px 6px 0 0;padding:8px 12px;border-radius:999px;border:1px solid #d8e1f5;background:#fff;cursor:pointer;font-size:14px}
+  .ver-btn:hover{border-color:#bcd0ff;background:#f7faff}
+  /* 하단 자유 영역 */
+  .bottom-free{margin-top:22px;background:#fff;border:1px dashed #e4e7ec;border-radius:14px;padding:28px;text-align:center;color:#6b7280}
+  @media (max-width:900px){
+    .two-col{grid-template-columns:1fr}
+    .two-col::before{display:none}
+    .col{padding:20px}
+    .panel{max-width:100%}
+  }
+</style>
 </head>
 <body>
-  <div class="top-gap"></div>
-  <div class="wrap">
-    <h1>성경 인덱스</h1>
-    <p>책을 선택하면 해당 장으로 이동합니다.</p>
+<header>
+  <h1>믿음으로 쓰는 성경</h1>
+  <p>말씀을 따라 읽고 쓰고 묵상하며 — 언어를 선택해 시작하세요</p>
+</header>
 
-    <div class="cards">
-      <!-- 마태복음 1장 -->
-      <a class="card" href="./matthew001.html">
-        <strong>마태복음 1장</strong>
-        <div class="subtitle">Matthew 1</div>
-      </a>
+<main class="wrap">
+  <section class="two-col">
+    <!-- 왼쪽: 소개/이미지 섹션 -->
+    <div class="col left">
+      <div class="placeholder">
+        <div style="font-weight:600;margin-bottom:6px">소개/이미지 영역</div>
+        <div>여기에 성경 관련 이미지, 프로젝트 소개, 사용법 등을 배치합니다.</div>
+      </div>
     </div>
-  </div>
+
+    <!-- 오른쪽: 언어 선택 -->
+    <div class="col right">
+      <div class="panel">
+        <h2 style="margin:0 0 8px">언어 선택</h2>
+        <p style="margin:0 0 14px;color:#667085">버전을 통해 창세기 1장으로 이동합니다.</p>
+
+        <!-- 한국어 -->
+        <button class="lang" data-target="#v-ko"><strong>한국어</strong> <span style="color:#667085">Korean</span></button>
+        <div class="vers" id="v-ko">
+          <button class="ver-btn" data-link="ko-easy/genesis001.html">쉬운성경</button>
+        </div>
+
+        <!-- Español -->
+        <button class="lang" data-target="#v-es"><strong>Español</strong> <span style="color:#667085">Spanish</span></button>
+        <div class="vers" id="v-es">
+          <button class="ver-btn" data-link="es-nvi/genesis001.html">NVI</button>
+        </div>
+
+        <!-- English -->
+        <button class="lang" data-target="#v-en"><strong>English</strong></button>
+        <div class="vers" id="v-en">
+          <button class="ver-btn" data-link="en-nvi/genesis001.html">NVI</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 하단 자유영역 -->
+  <section class="bottom-free">
+    하단 자유 영역 (공지, 후원/QR, 사용 설명, 후기 등)
+  </section>
+</main>
+
+<script>
+const LINKS = {
+  "ko-easy/genesis001.html": "./ko-easy/genesis001.html",
+  "es-nvi/genesis001.html": "./es-nvi/genesis001.html",
+  "en-nvi/genesis001.html": "./en-nvi/genesis001.html"
+};
+document.querySelectorAll('.lang').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const target = document.querySelector(btn.dataset.target);
+    document.querySelectorAll('.vers').forEach(v=>{ if(v!==target) v.style.display='none'; });
+    target.style.display = (target.style.display==='block') ? 'none' : 'block';
+  });
+});
+document.querySelectorAll('.ver-btn').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    const key = b.getAttribute('data-link');
+    const href = LINKS[key] || key;
+    window.location.href = href;
+  });
+});
+</script>
 </body>
 </html>
