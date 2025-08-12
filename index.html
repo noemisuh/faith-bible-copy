@@ -1,97 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>믿음으로 쓰는 성경</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9fafb;
-      color: #333;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>믿음으로 쓰는 성경</title>
+<style>
+  :root{
+    --maxw:1060px; --pad:16px; --line:#e9e9ef; --ink:#111; --hero:#eaf2ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.6 system-ui, Apple SD Gothic Neo, Segoe UI, sans-serif;color:var(--ink);background:#fff}
 
-    header {
-      background-color: #e0f2fe;
-      padding: 80px 20px;
-      text-align: center;
-    }
+  /* 상단 히어로 */
+  .hero{background:var(--hero)}
+  .hero .wrap{max-width:var(--maxw);margin:0 auto;padding:96px var(--pad) 34px}
+  h1{margin:0;text-align:center;font-size:36px;font-weight:800;letter-spacing:.2px}
+  .subtitle{margin:10px 0 0;text-align:center;color:#6b7280}
+  .heroSpacer{height:42px}
 
-    header h1 {
-      font-size: 2.8em;
-      margin: 0;
-      color: #0f172a;
-    }
+  /* 본문 카드 */
+  .wrap2{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    box-shadow:0 8px 22px rgba(0,0,0,.05);
+    padding:22px;margin-top:18px;display:grid;gap:24px;grid-template-columns:1fr 1fr;
+  }
+  .leftPanel{
+    border:2px dashed #c8d1ee;border-radius:14px;min-height:380px;padding:18px;
+    display:flex;align-items:center;justify-content:center;text-align:center;color:#475569;background:#fbfdff
+  }
+  .leftPanel .title{font-weight:800;margin-bottom:8px}
 
-    header p {
-      font-size: 1.3em;
-      margin-top: 15px;
-      color: #334155;
-    }
+  .rightPanel{padding:6px}
+  .label{display:inline-block;margin-bottom:8px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:#4b5563;background:#fff}
 
-    .language-links {
-      text-align: center;
-      margin: 60px 0 40px;
-    }
+  /* 버튼 공통 */
+  .row{display:flex;flex-wrap:wrap;gap:14px;margin:6px 0 18px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:16px 20px;border:2px solid var(--line);border-radius:999px;
+    font-size:18px;font-weight:800;background:#fff;cursor:pointer;user-select:none;
+    box-shadow:0 2px 0 rgba(0,0,0,.02);
+  }
+  .btn:hover{background:#f8fafc}
+  .btn:active{transform:translateY(1px)}
+  .btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
 
-    .language-links a {
-      display: inline-block;
-      margin: 0 15px;
-      padding: 12px 24px;
-      background-color: #3b82f6;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 1em;
-    }
-
-    .go-section {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .go-section a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #10b981;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 0.95em;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #e2e8f0;
-      font-size: 0.9em;
-      margin-top: 40px;
-    }
-  </style>
+  @media (max-width:860px){
+    .card{grid-template-columns:1fr}
+    .leftPanel{min-height:260px}
+    .btn{width:100%;justify-content:center}
+  }
+</style>
 </head>
 <body>
+  <div class="hero">
+    <div class="wrap">
+      <h1>믿음으로 쓰는 성경</h1>
+      <p class="subtitle">말씀을 따라 읽고 쓰고 묵상하며</p>
+    </div>
+  </div>
+  <div class="heroSpacer" aria-hidden="true"></div>
 
-  <header>
-    <h1>믿음으로 쓰는 성경</h1>
-    <p>말씀을 따라 읽고 쓰고 묵상하며</p>
-  </header>
+  <div class="wrap2">
+    <section class="card">
+      <!-- 좌측: 소개/이미지 영역(공간 확보) -->
+      <div class="leftPanel" aria-label="소개/이미지 영역">
+        <div>
+          <div class="title">소개 / 이미지 영역</div>
+          <div>여기에 프로젝트 소개, 사용법, QR 등을 배치합니다.</div>
+        </div>
+      </div>
 
-  <div class="language-links">
-    <a href="#">한국어</a>
-    <a href="matthew001.html">中文</a>
-    <a href="mateo001.html">Español</a>
+      <!-- 우측: 언어 → 버전 -->
+      <div class="rightPanel">
+        <span class="label">언어</span>
+        <div id="langRow" class="row" role="listbox" aria-label="언어">
+          <button class="btn" data-lang="ko">한국어</button>
+          <button class="btn" data-lang="zh">中文</button>
+          <button class="btn" data-lang="es">Español</button>
+          <button class="btn" data-lang="en">English</button>
+        </div>
+
+        <span class="label">버전</span>
+        <div id="verRow" class="row" role="listbox" aria-label="버전">
+          <!-- 언어 선택 전엔 비어 있음 -->
+        </div>
+      </div>
+    </section>
+
+    <div style="height:44px"></div>
   </div>
 
-  <div class="go-section">
-    <a href="matthew001.html">📖 마태복음 1장 바로가기 (중국어)</a>
-  </div>
+  <script>
+    // 언어별 버전(빈 칸 포함). url이 비어 있으면 비활성(회색) 처리됩니다.
+    const ROUTES = {
+      ko: [
+        { name: "쉬운성경", url: "./menu/bible-menu-ko.html?open=genesis" },
+        { name: "", url: "" },           // 빈 칸(준비중)
+        { name: "", url: "" }            // 빈 칸(준비중)
+      ],
+      zh: [
+        { name: "和合本", url: "" },              // 빈 칸(준비중)
+        { name: "CUV", url: "" }                  // 빈 칸(준비중)
+      ],
+      es: [
+        { name: "NVI", url: "./menu/bible-menu-es.html?open=matthew" },
+        { name: "", url: "" }         // 빈 칸(준비중)
+      ],
+      en: [
+        { name: "NIV", url: "" },                 // 빈 칸(준비중)
+        { name: "", url: "" }                  // 빈 칸(준비중)
+      ]
+    };
 
-  <footer>
-    ⓒ 2025 믿음으로 쓰는 성경 | Faith Bible Copy Project
-  </footer>
+    const langRow = document.getElementById('langRow');
+    const verRow  = document.getElementById('verRow');
 
+    // 언어 선택 → 해당 언어의 버전 버튼 렌더
+    langRow.addEventListener('click', (e)=>{
+      const btn = e.target.closest('.btn'); if(!btn) return;
+      const lang = btn.dataset.lang;
+      const versions = ROUTES[lang] || [];
+      verRow.innerHTML = versions.map(v=>{
+        const disabled = !v.url ? 'aria-disabled="true"' : '';
+        const urlAttr  = v.url ? `data-url="${v.url}"` : '';
+        return `<button class="btn" ${urlAttr} ${disabled}>${v.name}</button>`;
+      }).join('');
+      verRow.scrollIntoView({behavior:'smooth', block:'nearest'});
+    });
+
+    // 버전 클릭 → 해당 메뉴 페이지로 이동
+    verRow.addEventListener('click', (e)=>{
+      const btn = e.target.closest('.btn'); if(!btn) return;
+      const url = btn.getAttribute('data-url'); if(url) location.href = url;
+    });
+  </script>
 </body>
 </html>
-<!DOCTYPE html><html>  <head>    <meta charset="UTF-8">    <title>믿음으로 쓰는 필사성경</title>  </head>  <body>    <h1>중국어 마태복음 1장</h1>    <p>여기에 필사 본문이 들어갑니다.</p>  </body></html>
