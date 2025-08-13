@@ -35,7 +35,12 @@
     .lang-row{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 14px;display:grid;grid-template-columns:100px 1fr;align-items:center;gap:8px}
     .lang-head{font-weight:800;white-space:nowrap;text-align:left}
     .versions{display:flex;flex-wrap:wrap;gap:6px}
-    .ver{min-width:60px;height:32px;line-height:32px;padding:0 10px;border-radius:999px;background:var(--pill);border:1px solid var(--pillLine);display:inline-block;text-align:center;font-weight:600;cursor:pointer;font-size:14px}
+    .ver{min-width:60px;height:32px;line-height:32px;padding:0 10px;border-radius:999px;background:var(--pill);border:1px solid var(--pillLine);display:inline-block;text-align:center;font-weight:600;font-size:14px}
+
+    /* 버전 버튼 링크 */
+    a.ver{display:inline-block; text-decoration:none; color:inherit;}
+    a.ver:visited{color:inherit;}
+    a.ver:hover, a.ver:focus{ text-decoration:none; outline:none; }
 
     /* Bottom free area (empty) */
     .free{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;min-height:120px}
@@ -71,28 +76,28 @@
           <div class="lang-row" data-lang="ko">
             <div class="lang-head">한국어</div>
             <div class="versions">
-              <span class="ver">쉬운성경</span>
+              <a class="ver" href="korean_easy/changsegi001.html">쉬운성경</a>
             </div>
           </div>
 
           <div class="lang-row" data-lang="zh">
             <div class="lang-head">中文</div>
             <div class="versions">
-              <span class="ver">CUV</span>
+              <a class="ver" href="chinese/matthew001.html">CUV</a>
             </div>
           </div>
 
           <div class="lang-row" data-lang="es">
             <div class="lang-head">Español</div>
             <div class="versions">
-              <span class="ver">NVI</span>
+              <a class="ver" href="spanish_nvi/genesis001.html">NVI</a>
             </div>
           </div>
 
           <div class="lang-row" data-lang="en">
             <div class="lang-head">English</div>
             <div class="versions">
-              <span class="ver">NIV</span>
+              <a class="ver" href="english_niv/genesis001.html">NIV</a>
             </div>
           </div>
         </section>
@@ -108,3 +113,4 @@
   </div>
 </body>
 </html>
+
