@@ -34,6 +34,19 @@
     a.ver{display:inline-block;text-decoration:none;color:inherit}
     a.ver:visited{color:inherit}
     a.ver:hover, a.ver:focus{ text-decoration:none; outline:none; }
+    
+ /* ===== 최소 보강 CSS (네비·히어로·레이아웃) ===== */
+/* 상단 네비게이션(공통) */
+header.site-nav{background:#0f172a;color:#fff;}
+header.site-nav nav{
+  display:flex; flex-wrap:wrap; gap:8px;
+  justify-content:center; align-items:center;
+}
+header.site-nav a{
+  color:#fff; text-decoration:none; opacity:.9;
+}
+header.site-nav a:hover, header.site-nav a:focus{opacity:1; text-decoration:underline;}
+header.site-nav span.sep{opacity:.35;}    
   </style>
 </head>
 <body>
@@ -110,6 +123,7 @@
   </div>
 </body>
 </html>
+
 
 
 
