@@ -145,45 +145,46 @@
 
     <section class="hero">
       <div class="brand">
-        <h1>믿음으로 쓰는 성경</h1>
+        <h1>필사 성경</h1>
         <div class="subtitle">말씀을 따라 읽고 쓰고 묵상하는 공간</div>
       </div>
     </section>
     
     <div class="outer3">
-      <!-- 왼쪽 QR -->
-      <aside class="qr-col">
-        <div class="qr-grid">
-<!-- QR (모두 faith-bible-copy 경로로 통일) -->
-<div class="qr-item">
-  <a href="https://noemisuh.github.io/faith-bible-copy/korean_easy/?from=qr" target="_blank" aria-label="한국어 쉬운성경">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-bible-copy/korean_easy/?from=qr" alt="Korean Easy QR" loading="lazy">
-  </a>
-  <p>한국어 · 쉬운성경</p>
-</div>
-
-<div class="qr-item">
-  <a href="https://noemisuh.github.io/faith-bible-copy/chinese_cuv/?from=qr" target="_blank" aria-label="中文 CUV">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-bible-copy/chinese_cuv/?from=qr" alt="Chinese CUV QR" loading="lazy">
-  </a>
-  <p>中文 · CUV</p>
-</div>
-
-<div class="qr-item">
-  <a href="https://noemisuh.github.io/faith-bible-copy/spanish_nvi/?from=qr" target="_blank" aria-label="Español NVI">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-bible-copy/spanish_nvi/?from=qr" alt="Spanish NVI QR" loading="lazy">
-  </a>
-  <p>Español · NVI</p>
-</div>
-
-<div class="qr-item">
-  <a href="https://noemisuh.github.io/faith-bible-copy/english_niv/?from=qr" target="_blank" aria-label="English NIV">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-bible-copy/english_niv/?from=qr" alt="English NIV QR" loading="lazy">
-  </a>
-  <p>English · NIV</p>
-</div>
-        </div>
-      </aside>
+     
+    <!-- 왼쪽 QR -->
+<aside class="qr-col">
+  <div class="qr-grid">
+    <!-- 한국어 -->
+    <div class="qr-item">
+      <a href="https://noemisuh.github.io/faith-bible-copy/korean_easy/?from=qr" target="_blank" aria-label="한국어 쉬운성경">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-bible-copy/korean_easy/?from=qr" alt="Korean Easy QR" loading="lazy">
+      </a>
+      <p>한국어 · 쉬운성경</p>
+    </div>
+    <!-- 中文 -->
+    <div class="qr-item">
+      <a href="https://noemisuh.github.io/faith-bible-copy/chinese_cuv/?from=qr" target="_blank" aria-label="中文 CUV">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-bible-copy/chinese_cuv/?from=qr" alt="Chinese CUV QR" loading="lazy">
+      </a>
+      <p>中文 · CUV</p>
+    </div>
+    <!-- Español -->
+    <div class="qr-item">
+      <a href="https://noemisuh.github.io/faith-bible-copy/spanish_nvi/?from=qr" target="_blank" aria-label="Español NVI">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-bible-copy/spanish_nvi/?from=qr" alt="Spanish NVI QR" loading="lazy">
+      </a>
+      <p>Español · NVI</p>
+    </div>
+    <!-- English -->
+    <div class="qr-item">
+      <a href="https://noemisuh.github.io/faith-bible-copy/english_niv/?from=qr" target="_blank" aria-label="English NIV">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-bible-copy/english_niv/?from=qr" alt="English NIV QR" loading="lazy">
+      </a>
+      <p>English · NIV</p>
+    </div>
+  </div>
+</aside>
 
       <!-- 가운데 소개 -->
       <section class="center-col">
@@ -267,6 +268,17 @@
     document.getElementById('resumeStay')?.addEventListener('click', ()=>{ bar.style.display = 'none'; });
   })();
   </script>
+
+    <script>
+(function fixLangLinksToAbsolute(){
+  const ROOT = "https://noemisuh.github.io/faith-bible-copy/";
+  document.querySelectorAll('.versions a.ver, .qr-item > a').forEach(a=>{
+    const href = a.getAttribute('href') || '';
+    if (/^https?:\/\//i.test(href)) return;
+    a.href = ROOT + href.replace(/^\/+/, '').replace(/^\.?\/*/, '');
+  });
+})();
+</script>
 </body>
 </html>
 
