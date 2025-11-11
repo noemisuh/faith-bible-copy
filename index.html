@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>믿음으로 쓰는 성경 | Faith Scripture</title>
+<title>필사 성경 | faith-bible-copy</title>
 
   <style>
     :root{
@@ -114,29 +114,34 @@
     }
     /* 홈에서는 빵부스러기 완전 숨김 + 위쪽 여백 제거 */
      body.home .crumbs { display: none; }
+
+     nav a[aria-current="page"] {
+      font-weight: 700;
+      text-decoration: underline;
+      opacity: 1;
+    }
   </style>
 </head>
 
   <body class="home">  <!-- 홈 페이지 표시 플래그 -->
-  <header>
-    <nav aria-label="주요 메뉴">
-      <ul>
-        <li><a href="https://noemisuh.github.io/faith-scripture/">믿음으로 쓰는 성경</a></li>
-        <li><a href="https://noemisuh.github.io/faith-bible-copy/">필사 성경</a></li>
-        <li><a href="https://noemisuh.github.io/Thematic-Hub-Page/">메뉴 허브</a></li>
-        <li><a href="https://noemisuh.tistory.com/">티스토리</a></li>
-        <li><a href="https://blog.naver.com/noemisuh">네이버</a></li>
-      </ul>
-    </nav>
-  </header>
+ <header>
+  <nav aria-label="주요 메뉴">
+    <ul>
+      <li><a href="https://noemisuh.github.io/faith-scripture/">믿음으로 쓰는 성경</a></li>
+      <li><a href="https://noemisuh.github.io/faith-bible-copy/" aria-current="page">필사 성경</a></li>
+      <li><a href="https://noemisuh.github.io/Thematic-Hub-Page/">메뉴 허브</a></li>
+      <li><a href="https://noemisuh.tistory.com/">티스토리</a></li>
+      <li><a href="https://blog.naver.com/noemisuh">네이버</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main>
     <p class="crumbs">
-      <a href="/faith-scripture/">홈</a>
-      · <a href="https://noemisuh.github.io/faith-bible-copy/">필사 성경</a>
-      · <a href="https://noemisuh.github.io/Thematic-Hub-Page/">메뉴 허브</a>
+    <a href="https://noemisuh.github.io/faith-bible-copy/">홈</a>
+  · <a href="https://noemisuh.github.io/faith-scripture/">믿음으로 쓰는 성경</a>
+  · <a href="https://noemisuh.github.io/Thematic-Hub-Page/">메뉴 허브</a>  
     </p>
-
 
     <section class="hero">
       <div class="brand">
@@ -149,34 +154,34 @@
       <!-- 왼쪽 QR -->
       <aside class="qr-col">
         <div class="qr-grid">
-          <!-- 한국어 -->
-          <div class="qr-item">
-            <a href="/faith-scripture/korean_easy/?from=qr" target="_blank" aria-label="한국어 쉬운성경">
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-scripture/korean_easy/?from=qr" alt="Korean Easy QR" loading="lazy">
-            </a>
-            <p>한국어 · 쉬운성경</p>
-          </div>
-          <!-- 中文 -->
-          <div class="qr-item">
-            <a href="/faith-scripture/chinese_cuv/?from=qr" target="_blank" aria-label="中文 CUV">
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-scripture/chinese_cuv/?from=qr" alt="Chinese CUV QR" loading="lazy">
-            </a>
-            <p>中文 · CUV</p>
-          </div>
-          <!-- Español -->
-          <div class="qr-item">
-            <a href="/faith-scripture/spanish_nvi/?from=qr" target="_blank" aria-label="Español NVI">
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-scripture/spanish_nvi/?from=qr" alt="Spanish NVI QR" loading="lazy">
-            </a>
-            <p>Español · NVI</p>
-          </div>
-          <!-- English -->
-          <div class="qr-item">
-            <a href="/faith-scripture/english_niv/?from=qr" target="_blank" aria-label="English NIV">
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-scripture/english_niv/?from=qr" alt="English NIV QR" loading="lazy">
-            </a>
-            <p>English · NIV</p>
-          </div>
+<!-- QR (모두 faith-bible-copy 경로로 통일) -->
+<div class="qr-item">
+  <a href="https://noemisuh.github.io/faith-bible-copy/korean_easy/?from=qr" target="_blank" aria-label="한국어 쉬운성경">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-bible-copy/korean_easy/?from=qr" alt="Korean Easy QR" loading="lazy">
+  </a>
+  <p>한국어 · 쉬운성경</p>
+</div>
+
+<div class="qr-item">
+  <a href="https://noemisuh.github.io/faith-bible-copy/chinese_cuv/?from=qr" target="_blank" aria-label="中文 CUV">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-bible-copy/chinese_cuv/?from=qr" alt="Chinese CUV QR" loading="lazy">
+  </a>
+  <p>中文 · CUV</p>
+</div>
+
+<div class="qr-item">
+  <a href="https://noemisuh.github.io/faith-bible-copy/spanish_nvi/?from=qr" target="_blank" aria-label="Español NVI">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-bible-copy/spanish_nvi/?from=qr" alt="Spanish NVI QR" loading="lazy">
+  </a>
+  <p>Español · NVI</p>
+</div>
+
+<div class="qr-item">
+  <a href="https://noemisuh.github.io/faith-bible-copy/english_niv/?from=qr" target="_blank" aria-label="English NIV">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://noemisuh.github.io/faith-bible-copy/english_niv/?from=qr" alt="English NIV QR" loading="lazy">
+  </a>
+  <p>English · NIV</p>
+</div>
         </div>
       </aside>
 
@@ -191,27 +196,34 @@
         </div>
       </section>
 
-      <!-- 오른쪽 언어/버전 -->
-      <section class="right-col">
-        <div class="card">
-          <div class="lang-row" data-lang="ko">
-            <div class="lang-head">한국어</div>
-            <div class="versions"><a class="ver" href="korean_easy/">쉬운성경</a></div>
-          </div>
-          <div class="lang-row" data-lang="zh">
-            <div class="lang-head">中文</div>
-            <div class="versions"><a class="ver" href="chinese_cuv/">CUV</a></div>
-          </div>
-          <div class="lang-row" data-lang="es">
-            <div class="lang-head">Español</div>
-            <div class="versions"><a class="ver" href="spanish_nvi/">NVI</a></div>
-          </div>
-          <div class="lang-row" data-lang="en">
-            <div class="lang-head">English</div>
-            <div class="versions"><a class="ver" href="english_niv/">NIV</a></div>
-          </div>
-        </div>
-      </section>
+<section class="right-col">
+  <div class="card">
+    <div class="lang-row" data-lang="ko">
+      <div class="lang-head">한국어</div>
+      <div class="versions">
+        <a class="ver" href="https://noemisuh.github.io/faith-bible-copy/korean_easy/">쉬운성경</a>
+      </div>
+    </div>
+    <div class="lang-row" data-lang="zh">
+      <div class="lang-head">中文</div>
+      <div class="versions">
+        <a class="ver" href="https://noemisuh.github.io/faith-bible-copy/chinese_cuv/">CUV</a>
+      </div>
+    </div>
+    <div class="lang-row" data-lang="es">
+      <div class="lang-head">Español</div>
+      <div class="versions">
+        <a class="ver" href="https://noemisuh.github.io/faith-bible-copy/spanish_nvi/">NVI</a>
+      </div>
+    </div>
+    <div class="lang-row" data-lang="en">
+      <div class="lang-head">English</div>
+      <div class="versions">
+        <a class="ver" href="https://noemisuh.github.io/faith-bible-copy/english_niv/">NIV</a>
+      </div>
+    </div>
+  </div>
+</section>  
     </div>
 
     <!-- 하단 안내 -->
